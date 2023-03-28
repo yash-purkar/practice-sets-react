@@ -2,6 +2,9 @@ import { EmployeeCard } from "./EmployeeCard";
 import { Button } from "./Button";
 import { StationeryItems } from "./StationeryItems";
 import { DisplayImage } from "./DisplayImage";
+import { ProductsCard } from "./ProductsCard";
+import { ProductsCard2 } from "./ProductsCard2";
+import { StudentDetails } from "./StudentDetails";
 // ReactJS Practice Question Set 1
 // Instructions:#
 // Do these questions in a React JS template editor. You can use React JS CodeSandbox or React JS REPL.
@@ -61,4 +64,124 @@ const caption = 'Spring Flowers'
 
 export const Question4 = () => {
   return <DisplayImage url={imageLink} caption={caption} />
+}
+
+
+// 5️⃣Given the products data. Build a React component to display the name of all products as an unordered list on the DOM.
+const products = [
+  { name: 'Perk', quantity: 10, sales: 7 },
+  { name: 'Pepsi', quantity: 10, sales: 20 },
+  { name: 'Coke', quantity: 18, sales: 50 },
+  { name: 'Maggi', quantity: 41, sales: 22 },
+  { name: '5Star', quantity: 7, sales: 9 },
+]
+export const Question5 = () => {
+  return (
+    <ProductsCard products={products} />
+  )
+}
+
+
+// 6️⃣Consider the products data from previous question and display all the product details as unordered list for which the number of sales is more than the quantity.
+
+export const Question6 = () => {
+  return (
+    <ProductsCard2 products={products} />
+  )
+}
+
+
+// 7️⃣Given a student object with student name and the marks for english, maths and computers. If the total marks of a student is >= 225, the grade is A, >=180 the grade is B, >=150 the grade is C, otherwise the grade is D. Build a React Component that takes the student object as props and uses it to show all the students details, total marks and grade on the DOM as shown in the image below.
+const student = {
+  name: 'John Doe',
+  english: 90,
+  maths: 80,
+  computers: 70,
+}
+
+export const Question7 = () => {
+  return (
+    <StudentDetails studentData={student} />
+  )
+}
+
+
+// 8️⃣Build a React component to display all the employee details as unordered list on the DOM in the following format:
+// name: name, level: level, dept: dept, designation: designation, salary: salary
+const employees = [
+  {
+    name: 'Jack Smith',
+    level: 2,
+    dept: 'Tech',
+    designation: 'Manager',
+    salary: 24000,
+  },
+  {
+    name: 'Mary Robbins',
+    level: 3,
+    dept: 'Fin',
+    designation: 'Manager',
+    salary: 28000,
+  },
+  {
+    name: 'Steve Williams',
+    level: 4,
+    dept: 'Ops',
+    designation: 'President',
+    salary: 35000,
+  },
+  {
+    name: 'Bob Andrews',
+    level: 1,
+    dept: 'Fin',
+    designation: 'Trainee',
+    salary: 16500,
+  },
+  {
+    name: 'Dave Martin',
+    level: 2,
+    dept: 'Fin',
+    designation: 'Manager',
+    salary: 21700,
+  },
+  {
+    name: 'Julia Clarke',
+    level: 3,
+    dept: 'Ops',
+    designation: 'Manager',
+    salary: 26900,
+  },
+  {
+    name: 'Kathy Jones',
+    level: 4,
+    dept: 'Tech',
+    designation: 'President',
+    salary: 42500,
+  },
+  {
+    name: 'Tom Bresnan',
+    level: 2,
+    dept: 'Tech',
+    designation: 'Manager',
+    salary: 22200,
+  },
+]
+
+export const Question8 = () => {
+  return (
+    <ul>
+      {employees.map(({ name, level, dept, designation, salary }) => <li style={{ marginBottom: "4px" }}>name:{name}, level: {level}, dept: {dept}, designation: {designation}, salary: {salary}</li>)}
+    </ul>
+  )
+}
+
+
+
+//9️⃣Considering above data given in question 8, at the end of all the employee details, calculate and display the total salary expense of the company. Total Salary Expense: totalSalary
+
+export const Question9 = () => {
+  const totalSalary = employees.reduce((acc, { salary }) => acc + salary, 0)
+  return (
+    <h2>Total Salary Expenses: {totalSalary}</h2>
+  )
 }
