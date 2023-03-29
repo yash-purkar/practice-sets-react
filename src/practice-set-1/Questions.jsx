@@ -1,4 +1,4 @@
-import { Question1, Question2, Question3, Question4, Question5, Question6, Question7, Question8, Question9 } from './Set1'
+import { Question1, Question2, Question3, Question4, Question5, Question6, Question7, Question8, Question9, Question10, Question11, Question12 } from './Set1'
 
 export const Questions = () => {
   return (
@@ -23,6 +23,12 @@ export const Questions = () => {
         <li><Question8 /></li>
         <hr />
         <li><Question9 /></li>
+        <hr />
+        <li><Question10 /></li>
+        <hr />
+        <li><Question11 /></li>
+        <hr />
+        <li><Question12 /></li>
         <hr />
 
       </ol>
