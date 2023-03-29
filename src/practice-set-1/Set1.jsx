@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { EmployeeCard } from "./EmployeeCard";
 import { Button } from "./Button";
 import { StationeryItems } from "./StationeryItems";
@@ -5,6 +6,7 @@ import { DisplayImage } from "./DisplayImage";
 import { ProductsCard } from "./ProductsCard";
 import { ProductsCard2 } from "./ProductsCard2";
 import { StudentDetails } from "./StudentDetails";
+import { EmployeeDetails } from "./EmployeeDetails";
 // ReactJS Practice Question Set 1
 // Instructions:#
 // Do these questions in a React JS template editor. You can use React JS CodeSandbox or React JS REPL.
@@ -183,5 +185,58 @@ export const Question9 = () => {
   const totalSalary = employees.reduce((acc, { salary }) => acc + salary, 0)
   return (
     <h2>Total Salary Expenses: {totalSalary}</h2>
+  )
+}
+
+//🔟 Considering above data given in question 8, display the details of employee with orange backgroundColor, who are at level 2.
+
+export const Question10 = () => {
+  return (
+    <EmployeeDetails employeeData={employees} />
+  )
+}
+
+
+// 1️⃣1️⃣Considering above data given in question 8, add a border around the employee details whose designation is “President”.
+export const Question11 = () => {
+  return (
+    <>
+      <h1>Employee Details</h1>
+      <ul>
+        {
+          employees.map(({ name, level, dept, designation, salary }) =>
+            <li style={{ border: designation === "President" ? "1px solid orange" : "" }}>Name: {name}, Level: {level}, Dept: {dept}, Designation: {designation}, Salary: {salary}</li>
+          )
+        }
+      </ul>
+    </>
+  )
+}
+
+
+// Given an employee data. List out the employee details on DOM. Then upon click of a button “Highlight Employees”, add a border to the employee details who have more than 5 years of experience.
+const employees1 = [
+  { id: "E1", name: "Arpit Jain", workExperience: 6 },
+  { id: "E2", name: "Monica Jaiswal", workExperience: 4 },
+  { id: "E3", name: "Priya Shetty", workExperience: 9 },
+  { id: "E4", name: "Aman Sen", workExperience: 1 }
+];
+export const Question12 = () => {
+  const [isBorder, setIsBorder] = useState(false);
+
+  const handleClick = () => {
+    //false !== true => true
+    //true !== true => false
+    setIsBorder(isBorder !== true);
+  }
+
+  return (
+    <>
+      <h1>Employees</h1>
+      <ul>
+        {employees1.map(({ name, workExperience }) => <li style={{ border: isBorder && workExperience > 5 ? "1px solid orange" : "" }}>Name: {name}, Work Experience: {workExperience}</li>)}
+      </ul>
+      <button onClick={handleClick}>Highlight</button>
+    </>
   )
 }
