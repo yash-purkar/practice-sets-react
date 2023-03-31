@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { EmployeeCard } from "./EmployeeCard";
-import { Button } from "./Button";
-import { StationeryItems } from "./StationeryItems";
-import { DisplayImage } from "./DisplayImage";
-import { ProductsCard } from "./ProductsCard";
-import { ProductsCard2 } from "./ProductsCard2";
-import { StudentDetails } from "./StudentDetails";
-import { EmployeeDetails } from "./EmployeeDetails";
+import { EmployeeCard } from "./Components/EmployeeCard";
+import { Button } from "./Components/Button";
+import { StationeryItems } from "./Components/StationeryItems";
+import { DisplayImage } from "./Components/DisplayImage";
+import { ProductsCard } from "./Components/ProductsCard";
+import { ProductsCard2 } from "./Components/ProductsCard2";
+import { StudentDetails } from "./Components/StudentDetails";
+import { EmployeeDetails } from "./Components/EmployeeDetails";
 // ReactJS Practice Question Set 1
 // Instructions:#
 // Do these questions in a React JS template editor. You can use React JS CodeSandbox or React JS REPL.
