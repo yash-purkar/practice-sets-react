@@ -4,7 +4,8 @@ import { Cartoons } from './Components/Cartoons'
 import { EvenCartoons } from './Components/EvenCartoons'
 import { SuperPower } from './Components/SuperPower'
 import { Vegetables } from './Components/Vegetables'
-import { Flowers } from './Components/Flowers'
+import { ExpensiveBouquet, Flowers } from './Components/Flowers'
+import { NgoDonation } from './Components/NgoDonation'
 
 // 1️⃣Build a React component which takes an image, image height and image width as props and sets the height and width of the image and displays the image on DOM. Image link - https://picsum.photos/200
 export const Question1 = () => {
@@ -117,4 +118,43 @@ const bouquet = [
 ]
 export const Question6 = () => {
   return <Flowers bouquet={bouquet} />
+}
+
+// 7️⃣Build a React component to display the flowers of a bouquet in an ordered list on the DOM which has a price above 2000. Pass data as prop.
+export const Question7 = () => {
+  return (
+    <ExpensiveBouquet bouquet={bouquet} />
+  )
+}
+
+// 8️⃣Given an array of objects representing people who donated money to the NGO. Each object consists of: id, name, amount. Build a React component that takes the data as props and shows the total donation collected on the DOM. Output should be in the format: Total Donation Collected: _amount_
+
+// Data:
+const DonationData = [
+  {
+    id: 1,
+    name: 'Nitin',
+    Donation: 7800,
+  },
+  {
+    id: 2,
+    name: 'Mehak',
+    Donation: 9500,
+  },
+  {
+    id: 3,
+    name: 'Mehul',
+    Donation: 65000,
+  },
+  {
+    id: 4,
+    name: 'Nina',
+    Donation: 560,
+  },
+]
+
+export const Question8 = () => {
+  return (
+    <NgoDonation DonationData={DonationData} />
+  )
 }
