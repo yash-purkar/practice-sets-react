@@ -15,8 +15,19 @@ export const ColorPicker = ({ red, blue, green }) => {
     else if (color === "green") setHexCodes({ greenHexCode: green })
 
   }
+  // const colors = ["red", "blue", "green"];
+
   return (
     <>
+      {/* 
+    {colors.map((color) => {
+      return (
+        <div key={color}>
+          <button onClick={() => showHexcode(color)}>{color}</button>
+          <p>{hexCode[color]}</p>
+        </div>
+      );
+    })} */}
       <div>
         <button onClick={() => clickHandler("red")}>Red Color</button>
         <p>{redHexCode}</p>
@@ -32,3 +43,35 @@ export const ColorPicker = ({ red, blue, green }) => {
     </>
   )
 }
+
+
+//2nd way
+/*export const ColorPicker = ({ red, blue, green }) => {
+  const [hexCode, setHexCode] = useState({
+    red: "",
+    blue: "",
+    green: ""
+  });
+
+  const showHexcode = (color, hex) => {
+    console.log(color);
+    setHexCode({ [color]: hex });
+  };
+  return (
+    <>
+      <div>
+        <button onClick={() => showHexcode("red", red)}>Red</button>
+        <p>{hexCode.red}</p>
+      </div>
+      <div>
+        <button onClick={() => showHexcode("blue", blue)}>Blue</button>
+        <p>{hexCode.blue}</p>
+      </div>
+      <div>
+        <button onClick={() => showHexcode("green", green)}>Green</button>
+        <p>{hexCode.green}</p>
+      </div>
+    </>
+  );
+};
+*/
