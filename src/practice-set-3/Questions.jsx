@@ -6,7 +6,7 @@
 // Do NOT use for-loops.
 
 import React from 'react'
-import { Question1, Question2, Question3, Question4, Question5, Question6, Question7, Question8 } from './Set3'
+import { Question1, Question2, Question3, Question4, Question5, Question6, Question7, Question8, Question9, Question10 } from './Set3'
 
 export const Questions = () => {
   return (
@@ -28,6 +28,10 @@ export const Questions = () => {
         <li><Question7 /></li>
         <hr />
         <li><Question8 /></li>
+        <hr />
+        <li><Question9 /></li>
+        <hr />
+        <li><Question10 /></li>
         <hr />
 
       </ol>
