@@ -1,46 +1,24 @@
 import React, { useState } from 'react'
 
 export const ColorPicker = ({ red, blue, green }) => {
-  const [hexCodes, setHexCodes] = useState({
-    redHexCode: "",
-    blueHexCode: "",
-    greenHexCode: ""
-  })
-
-  const { redHexCode, blueHexCode, greenHexCode } = hexCodes;
-
-  const clickHandler = color => {
-    if (color === "red") setHexCodes({ redHexCode: red })
-    else if (color === "blue") setHexCodes({ blueHexCode: blue })
-    else if (color === "green") setHexCodes({ greenHexCode: green })
-
-  }
-  // const colors = ["red", "blue", "green"];
+  const [selectedColor, setSelectedColor] = useState("");
 
   return (
-    <>
-      {/* 
-    {colors.map((color) => {
-      return (
-        <div key={color}>
-          <button onClick={() => showHexcode(color)}>{color}</button>
-          <p>{hexCode[color]}</p>
-        </div>
-      );
-    })} */}
-      <div>
-        <button onClick={() => clickHandler("red")}>Red Color</button>
-        <p>{redHexCode}</p>
-      </div>
-      <div>
-        <button onClick={() => clickHandler("blue")}>Blue Color</button>
-        <p>{blueHexCode}</p>
-      </div>
-      <div>
-        <button onClick={() => clickHandler("green")}>Green Color</button>
-        <p>{greenHexCode}</p>
-      </div>
-    </>
+    <ul>
+      <li>
+        <button onClick={() => setSelectedColor(red)}>Red</button>
+        {selectedColor === red && <p> {selectedColor}</p>}
+      </li>
+      <li>
+        <button onClick={() => setSelectedColor(blue)}>Blue</button>
+        {selectedColor === blue && <p> {selectedColor}</p>}
+      </li>
+      <li>
+        <button onClick={() => setSelectedColor(green)}>Green</button>
+        {selectedColor === green && <p> {selectedColor}</p>}
+      </li>
+
+    </ul>
   )
 }
 

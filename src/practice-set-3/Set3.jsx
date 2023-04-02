@@ -6,6 +6,8 @@ import { SuperPower } from './Components/SuperPower'
 import { Vegetables } from './Components/Vegetables'
 import { ExpensiveBouquet, Flowers } from './Components/Flowers'
 import { NgoDonation } from './Components/NgoDonation'
+import { Cars } from './Components/Cars'
+import { Students } from './Components/Students'
 
 // 1️⃣Build a React component which takes an image, image height and image width as props and sets the height and width of the image and displays the image on DOM. Image link - https://picsum.photos/200
 export const Question1 = () => {
@@ -157,4 +159,78 @@ export const Question8 = () => {
   return (
     <NgoDonation DonationData={DonationData} />
   )
+}
+
+// 9️⃣Given an array of objects representing a list of cars. Each object consists of: id, name, price, category. Build a React component that shows on the DOM the total number of cars present in each category. For Example: if there are categories, luxury and sports, where there are 5 luxury cars and 2 sports car then the data should be represented as:
+
+// luxury: 5
+
+// sports: 2
+
+// Data:
+const cars = [
+  {
+    id: 1,
+    name: 'supra',
+    price: 500000,
+    category: 'sports',
+  },
+  {
+    id: 2,
+    name: 'A5',
+    price: 700000,
+    category: 'luxury',
+  },
+  {
+    id: 3,
+    name: 'huyara',
+    price: 1500000,
+    category: 'sports',
+  },
+  {
+    id: 4,
+    name: 'agera R',
+    price: 3500000,
+    category: 'sports',
+  },
+]
+
+export const Question9 = () => {
+  return (
+    <Cars carsData={cars} />
+  )
+}
+
+// 🔟Create an array of objects representing students marks out of 100. Each object consists of: id, name and marks. Build a React component that calculates the mean marks of all the students to see if the institute passes the criteria of the certification.
+
+// If the mean is above 80, display on the DOM Certification Approved
+
+// If the mean is below 80, display on the DOM Certification Not Approved
+
+// Data:
+const studentData = [
+  {
+    id: 1,
+    name: 'Nitin',
+    marks: 78,
+  },
+  {
+    id: 2,
+    name: 'Mehak',
+    marks: 95,
+  },
+  {
+    id: 3,
+    name: 'Mehul',
+    marks: 65,
+  },
+  {
+    id: 4,
+    name: 'Nina',
+    marks: 56,
+  },
+]
+
+export const Question10 = () => {
+  return <Students studentData={studentData} />
 }
