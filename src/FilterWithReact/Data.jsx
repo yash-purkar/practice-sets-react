@@ -36,3 +36,32 @@ export const pets = [
   { id: 4, name: "Mittens", type: "cat", age: 1, owner: "David" },
   { id: 5, name: "Rufus", type: "dog", age: 7, owner: "Eve" }
 ];
+
+export const products2 = [
+  { name: "Air condtioner", price: 10.99, category: "electronics", availability: true },
+  { name: "T-shirt", price: 25.49, category: "clothing", availability: false },
+  { name: "Television", price: 7.99, category: "electronics", availability: true },
+  { name: "Burger", price: 19.99, category: "food", availability: true },
+  { name: "Jeans", price: 12.99, category: "clothing", availability: false }
+];
+
+export const books2 = [
+  { title: "To Kill a Mockingbird", author: "Harper Lee", genre: "Fiction", publicationYear: 1960 },
+  { title: "1984", author: "George Orwell", genre: "Fiction", publicationYear: 1949 },
+  { title: "The Great Gatsby", author: "F. Scott Fitzgerald", genre: "Fiction", publicationYear: 1925 },
+  { title: "The Catcher in the Rye", author: "J.D. Salinger", genre: "Fiction", publicationYear: 1951 },
+  { title: "Pride and Prejudice", author: "Jane Austen", genre: "Fiction", publicationYear: 1813 },
+  { title: "A Brief History of Time", author: "Stephen Hawking", genre: "Non-fiction", publicationYear: 1988 },
+  { title: "The Immortal Life of Henrietta Lacks", author: "Rebecca Skloot", genre: "Non-fiction", publicationYear: 2010 },
+  { title: "The Da Vinci Code", author: "Dan Brown", genre: "Mystery", publicationYear: 2003 },
+  { title: "Murder on the Orient Express", author: "Agatha Christie", genre: "Mystery", publicationYear: 1934 }
+];
+
+export const movies2 = [
+  { title: "The Dark Knight", director: "Christopher Nolan", genre: "Action", releaseYear: 2008 },
+  { title: "The Godfather", director: "Francis Ford Coppola", genre: "Drama", releaseYear: 1972 },
+  { title: "The Shawshank Redemption", director: "Frank Darabont", genre: "Drama", releaseYear: 1994 },
+  { title: "Forrest Gump", director: "Robert Zemeckis", genre: "Comedy", releaseYear: 1994 },
+  { title: "Pulp Fiction", director: "Quentin Tarantino", genre: "Action", releaseYear: 1994 },
+  { title: "The Hangover", director: "Todd Phillips", genre: "Comedy", releaseYear: 2009 }
+];

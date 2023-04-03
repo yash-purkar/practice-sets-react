@@ -1,10 +1,13 @@
 import React from 'react'
-import { employees, products, books, movies, pets } from './Data'
+import { employees, products, books, movies, pets, products2, books2, movies2 } from './Data'
 import { Employees } from './Components/Employees'
 import { Product } from './Components/Product'
 import { Books } from './Components/Books'
 import { Movies } from './Components/Movies'
 import { Pets } from './Components/Pets'
+import { Product2 } from './Components/Product2'
+import { Books2 } from './Components/Books2'
+import { Movies2 } from './Components/Movies2'
 
 
 // 🔶INPUT TYPE QUESTIONS🔶
@@ -42,4 +45,22 @@ export const Question4 = () => {
 
 export const Question5 = () => {
   return <Pets pets={pets} />
+}
+
+
+// 6️⃣ Create a React app that displays a list of products with their name, price, category, and availability. Implement buttons for each product category (e.g. electronics, clothing, food) and filter the displayed list of products to show only those in the selected category when the corresponding button is clicked, using the filter() function.
+
+export const Question6 = () => {
+  return <Product2 products={products2} />
+}
+
+
+// 7️⃣ Create a React app that displays a list of books with their title, author, genre, and publication year. Implement buttons for each book genre (e.g. fiction, non-fiction, mystery) and filter the displayed list of books to show only those in the selected genre when the corresponding button is clicked, using the filter() function.
+export const Question7 = () => {
+  return <Books2 books={books2} />
+}
+
+// 8️⃣ Create a React app that displays a list of movies with their title, director, genre, and release year. Implement buttons for each movie genre (e.g. action, comedy, drama) and filter the displayed list of movies to show only those in the selected genre when the corresponding button is clicked, using the filter() function.
+export const Question8 = () => {
+  return <Movies2 movies={movies2} />
 }
