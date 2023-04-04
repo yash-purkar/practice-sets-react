@@ -82,3 +82,16 @@ export const jobData = [
   { company: "MNO LLC", jobTitle: "Sales Representative", type: "contract", location: "Miami, FL", salary: 70000 },
   { company: "PQR Inc.", jobTitle: "Product Manager", type: "part-time", location: "Seattle, WA", salary: 130000 }
 ];
+
+export const eventsData = [
+  { name: 'Concert', date: '2023-04-05', location: 'Staples Center', ticketPrice: 50, eventType: 'music' },
+  { name: 'Basketball Game', date: '2023-04-06', location: 'Madison Square Garden', ticketPrice: 100, eventType: 'sports' },
+  { name: 'Play', date: '2023-04-07', location: 'Broadway Theater', ticketPrice: 75, eventType: 'theater' },
+];
+
+export const workouts = [
+  { name: 'Push-ups', duration: '10 minutes', equipment: 'bodyweight', difficulty: 'Beginner' },
+  { name: 'Resistance band curls', duration: '20 minutes', equipment: 'resistance bands', difficulty: 'Intermediate' },
+  { name: 'Dumbbell squats', duration: '30 minutes', equipment: 'dumbbells', difficulty: 'Advanced' },
+  { name: 'Pull-ups', duration: '10 minutes', equipment: 'bodyweight', difficulty: 'Beginner' }
+]

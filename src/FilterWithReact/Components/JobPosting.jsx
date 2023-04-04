@@ -1,27 +1,23 @@
 import React, { useState } from 'react'
 
 export const JobPosting = ({ jobData }) => {
-  const [selectedJobTypes, setSelectedJobTypes] = useState([]) //["full-time","part"]
+  const [selectedJobTypes, setSelectedJobTypes] = useState([])
 
   const checkHandler = (e) => {
-    const type = e.target.value; //full-time
-    const isChecked = e.target.checked; //false
+    const type = e.target.value;
+    const isChecked = e.target.checked;
     console.log(isChecked)
 
-    if (isChecked) { //true
+    if (isChecked) {
       setSelectedJobTypes([...selectedJobTypes, type])
-      // ["full-time","part-time"]
     }
     else {
-      const newArr = selectedJobTypes.filter(t => t !== type) //[parttime]
-      setSelectedJobTypes(newArr);
-      // "fulltime" !== fulltime =false
-      //partime !==  fulltime True
+      setSelectedJobTypes(selectedJobTypes.filter(t => t !== type));
     }
   }
 
   const filteredJobTypes = jobData.filter(({ type }) => selectedJobTypes.includes(type));
-  //[parttime]
+
 
 
 
@@ -36,7 +32,7 @@ export const JobPosting = ({ jobData }) => {
               <label key={i}>
                 <input type="checkbox"
                   value={type}
-                  checked={selectedJobTypes.includes(type)} //[].include("Full-time") //true //fas
+                  checked={selectedJobTypes.includes(type)}
                   onChange={checkHandler} />
                 {type}
               </label>
