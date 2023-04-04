@@ -1,20 +1,30 @@
 import React, { useState } from 'react'
 
 export const JobPosting = ({ jobData }) => {
-  const [selectedJobTypes, setSelectedJobTypes] = useState([])
-  const checkHandler = (e) => {
-    const type = e.target.value;
-    const isChecked = e.target.checked;
+  const [selectedJobTypes, setSelectedJobTypes] = useState([]) //["full-time","part"]
 
-    if (isChecked) {
+  const checkHandler = (e) => {
+    const type = e.target.value; //full-time
+    const isChecked = e.target.checked; //false
+    console.log(isChecked)
+
+    if (isChecked) { //true
       setSelectedJobTypes([...selectedJobTypes, type])
+      // ["full-time","part-time"]
     }
     else {
-      setSelectedJobTypes(selectedJobTypes.filter(t => t !== type));
+      const newArr = selectedJobTypes.filter(t => t !== type) //[parttime]
+      setSelectedJobTypes(newArr);
+      // "fulltime" !== fulltime =false
+      //partime !==  fulltime True
     }
   }
 
   const filteredJobTypes = jobData.filter(({ type }) => selectedJobTypes.includes(type));
+  //[parttime]
+
+
+
 
   const jobTypes = ["full-time", "part-time", "contract"];
   return (
@@ -24,7 +34,10 @@ export const JobPosting = ({ jobData }) => {
           return (
             <>
               <label key={i}>
-                <input type="checkbox" value={type} checked={selectedJobTypes.includes(type)} onChange={checkHandler} />
+                <input type="checkbox"
+                  value={type}
+                  checked={selectedJobTypes.includes(type)} //[].include("Full-time") //true //fas
+                  onChange={checkHandler} />
                 {type}
               </label>
             </>
