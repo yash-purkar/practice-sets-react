@@ -1,5 +1,5 @@
 import React from 'react'
-import { employees, products, books, movies, pets, products2, books2, movies2, restaurants, jobData } from './Data'
+import { employees, products, books, movies, pets, products2, books2, movies2, restaurants, jobData, eventsData, workouts } from './Data'
 import { Employees } from './Components/Employees'
 import { Product } from './Components/Product'
 import { Books } from './Components/Books'
@@ -10,6 +10,8 @@ import { Books2 } from './Components/Books2'
 import { Movies2 } from './Components/Movies2'
 import { Restaurants } from './Components/Restaurants'
 import { JobPosting } from './Components/JobPosting'
+import { Events } from './Components/Events'
+import { Workouts } from './Components/Workouts'
 
 
 // 🔶INPUT TYPE QUESTIONS🔶
@@ -78,4 +80,19 @@ export const Question9 = () => {
 // 🔟Create a React app that displays a list of job postings with properties like company, job title, location, and salary. Implement a checkbox for each job type (e.g. full-time, part-time, contract) and filter the displayed list of job postings to show only those with the selected job type(s), using the filter() function.
 export const Question10 = () => {
   return <JobPosting jobData={jobData} />
+}
+
+// 1️⃣1️⃣Create a React app that displays a list of events with properties like name, date, location, and ticket price. Implement a checkbox for each event type (e.g. music, sports, theater) and filter the displayed list of events to show only those with the selected event type(s), using the filter() function.
+export const Question11 = () => {
+  return (
+    <Events eventsData={eventsData} />
+  )
+}
+
+
+// 1️⃣2️⃣Create a React app that displays a list of workout routines with properties like name, duration, equipment needed, and difficulty level. Implement a checkbox for each equipment type (e.g. dumbbells, resistance bands, bodyweight) and filter the displayed list of workout routines to show only those with the selected equipment type(s), using the filter() function.
+export const Question12 = () => {
+  return (
+    <Workouts workouts={workouts} />
+  )
 }
