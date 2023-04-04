@@ -12,7 +12,7 @@ export const Movies = ({ movies }) => {
       <input type="number" onChange={ratingChangeHandler} />
       <ul>
         {
-          filteredMovies.map(({ title, director, rating, genre }) => <li>{title}, {director}, <strong>{rating}</strong>, {genre}</li>)
+          filteredMovies.map(({ title, director, rating, genre }) => <li key={title}>{title}, {director}, <strong>{rating}</strong>, {genre}</li>)
         }
       </ul>
     </div>

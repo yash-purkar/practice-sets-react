@@ -13,7 +13,7 @@ export const Product2 = ({ products }) => {
 
       <ul>
         {
-          filteredCategory.map(({ name, price, category, availability }) => <li>Name: {name} Price: {price} Category: {category} availability: {availability ? "Available" : "Not Available"}</li>)
+          filteredCategory.map(({ name, price, category, availability }) => <li key={name}>Name: {name} Price: {price} Category: {category} availability: {availability ? "Available" : "Not Available"}</li>)
         }
       </ul>
     </>

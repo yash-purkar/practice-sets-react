@@ -1,5 +1,5 @@
 import React from 'react'
-import { employees, products, books, movies, pets, products2, books2, movies2 } from './Data'
+import { employees, products, books, movies, pets, products2, books2, movies2, restaurants, jobData } from './Data'
 import { Employees } from './Components/Employees'
 import { Product } from './Components/Product'
 import { Books } from './Components/Books'
@@ -8,6 +8,8 @@ import { Pets } from './Components/Pets'
 import { Product2 } from './Components/Product2'
 import { Books2 } from './Components/Books2'
 import { Movies2 } from './Components/Movies2'
+import { Restaurants } from './Components/Restaurants'
+import { JobPosting } from './Components/JobPosting'
 
 
 // 🔶INPUT TYPE QUESTIONS🔶
@@ -63,4 +65,17 @@ export const Question7 = () => {
 // 8️⃣ Create a React app that displays a list of movies with their title, director, genre, and release year. Implement buttons for each movie genre (e.g. action, comedy, drama) and filter the displayed list of movies to show only those in the selected genre when the corresponding button is clicked, using the filter() function.
 export const Question8 = () => {
   return <Movies2 movies={movies2} />
+}
+
+
+// 🔶CHECKBOX🔶
+// 9️⃣ Create a React app that displays a list of restaurants with their name, cuisine, location, and rating. Implement a checkbox for each cuisine type (e.g. Italian, Mexican, Chinese) and filter the displayed list of restaurants to show only those that serve the selected cuisine type(s), using the filter() function.
+export const Question9 = () => {
+  return <Restaurants restaurants={restaurants} />
+}
+
+
+// 🔟Create a React app that displays a list of job postings with properties like company, job title, location, and salary. Implement a checkbox for each job type (e.g. full-time, part-time, contract) and filter the displayed list of job postings to show only those with the selected job type(s), using the filter() function.
+export const Question10 = () => {
+  return <JobPosting jobData={jobData} />
 }
