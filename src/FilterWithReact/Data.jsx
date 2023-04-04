@@ -65,3 +65,20 @@ export const movies2 = [
   { title: "Pulp Fiction", director: "Quentin Tarantino", genre: "Action", releaseYear: 1994 },
   { title: "The Hangover", director: "Todd Phillips", genre: "Comedy", releaseYear: 2009 }
 ];
+
+// Checkbox
+export const restaurants = [
+  { name: 'Pizza Hut', cuisine: 'Italian', location: 'New York', rating: 4.2 },
+  { name: 'Taco Bell', cuisine: 'Mexican', location: 'Los Angeles', rating: 3.8 },
+  { name: 'Panda Express', cuisine: 'Chinese', location: 'San Francisco', rating: 4.5 },
+  { name: 'McDonalds', cuisine: 'Italian', location: 'Chicago', rating: 3.7 },
+  { name: 'Subway', cuisine: 'Mexican', location: 'Seattle', rating: 4.0 },
+];
+
+export const jobData = [
+  { company: "Acme Inc.", jobTitle: "Software Engineer", type: "full-time", location: "San Francisco, CA", salary: 120000 },
+  { company: "XYZ Corp.", jobTitle: "Marketing Manager", type: "part-time", location: "New York, NY", salary: 100000 },
+  { company: "ABC Co.", jobTitle: "Data Analyst", type: "full-time", location: "Chicago, IL", salary: 80000 },
+  { company: "MNO LLC", jobTitle: "Sales Representative", type: "contract", location: "Miami, FL", salary: 70000 },
+  { company: "PQR Inc.", jobTitle: "Product Manager", type: "part-time", location: "Seattle, WA", salary: 130000 }
+];

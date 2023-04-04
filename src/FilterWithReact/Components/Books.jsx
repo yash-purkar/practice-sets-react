@@ -11,7 +11,7 @@ export const Books = ({ books }) => {
       <ul>
         <input type="number" onChange={yearChangeHandler} maxLength="4" />
         {
-          filteredBooks.map(({ title, publishYear }) => <li>Title: ${title}  (Publish Year: ${publishYear})</li>)
+          filteredBooks.map(({ title, publishYear }) => <li key={title}>Title: ${title}  (Publish Year: ${publishYear})</li>)
         }
       </ul>
     </div>

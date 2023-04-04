@@ -15,7 +15,7 @@ export const Movies2 = ({ movies }) => {
       </div>
       <ul>
         {
-          filteredGenre.map(({ title, director, genre, releaseYear }) => <li>Title: {title} Director: {director} <strong>Genre: {genre}</strong> Release Year: {releaseYear}</li>)
+          filteredGenre.map(({ title, director, genre, releaseYear }, i) => <li key={i}>Title: {title} Director: {director} <strong>Genre: {genre}</strong> Release Year: {releaseYear}</li>)
         }
       </ul>
     </>
