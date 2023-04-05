@@ -24,7 +24,8 @@ export const movies = [
   { title: "The Shawshank Redemption", director: "Frank Darabont", rating: 9.3, genre: "Drama" },
   { title: "The Godfather", director: "Francis Ford Coppola", rating: 9.2, genre: "Crime" },
   { title: "The Dark Knight", director: "Christopher Nolan", rating: 9.0, genre: "Action" },
-  { title: "The Lord of the Rings: The Return of the King", director: "Peter Jackson", rating: 8.9, genre: "Adventure" }
+  { title: "The Lord of the Rings: The Return of the King", director: "Peter Jackson", rating: 8.9, genre: "Adventure" },
+  { title: "Friend Request", director: "Frank Darabont", rating: 8.9, genre: "Horror" },
 ];
 
 
@@ -95,3 +96,16 @@ export const workouts = [
   { name: 'Dumbbell squats', duration: '30 minutes', equipment: 'dumbbells', difficulty: 'Advanced' },
   { name: 'Pull-ups', duration: '10 minutes', equipment: 'bodyweight', difficulty: 'Beginner' }
 ]
+
+
+export const shampooData = [
+  { id: 1, name: 'Head & Shoulders', gender: 'men' },
+  { id: 2, name: 'Pantene', gender: 'women' },
+  { id: 3, name: 'Dove', gender: 'women' },
+  { id: 4, name: 'Garnier Fructis', gender: 'men' },
+  { id: 5, name: 'LOreal Paris', gender: 'women' },
+  { id: 6, name: 'Herbal Essences', gender: 'women' },
+  { id: 7, name: 'Dove Men+Care', gender: 'men' },
+  { id: 8, name: 'Suave', gender: 'unisex' },
+  { id: 9, name: 'Tresemme', gender: 'unisex' },
+];
