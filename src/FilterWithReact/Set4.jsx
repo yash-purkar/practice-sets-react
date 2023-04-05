@@ -1,5 +1,5 @@
 import React from 'react'
-import { employees, products, books, movies, pets, products2, books2, movies2, restaurants, jobData, eventsData, workouts } from './Data'
+import { employees, products, books, movies, pets, products2, books2, movies2, restaurants, jobData, eventsData, workouts, shampooData, cars, clothes } from './Data'
 import { Employees } from './Components/Employees'
 import { Product } from './Components/Product'
 import { Books } from './Components/Books'
@@ -12,6 +12,10 @@ import { Restaurants } from './Components/Restaurants'
 import { JobPosting } from './Components/JobPosting'
 import { Events } from './Components/Events'
 import { Workouts } from './Components/Workouts'
+import { Shampoos } from './Components/Shampoos'
+import { Movie3 } from './Components/Movie3'
+import { Cars } from './Components/Cars'
+import { Cloths } from './Components/Cloths'
 
 
 // 🔶INPUT TYPE QUESTIONS🔶
@@ -96,3 +100,24 @@ export const Question12 = () => {
     <Workouts workouts={workouts} />
   )
 }
+
+//🔶RADION🔶
+
+//1️⃣3️⃣Create a React app that displays a list of shampoos with their name, brand, hair type and price. Implement a radio button menu that allows users to filter the displayed list of shampoos by hair type - normal, dry, oily, and combination - using the filter() function.
+
+export const Question13 = () => {
+  return <Shampoos shampooData={shampooData} />
+}
+
+
+// 1️⃣4️⃣Create a React app that displays a list of movies with their title, genre, year, and rating. Implement a radio button menu that allows users to filter the displayed list of movies by genre - action, comedy, drama, and horror - using the filter() function.
+
+export const Question14 = () => <Movie3 moviesData={movies} />
+
+// 1️⃣5️⃣Create a React app that displays a list of cars with their make, model, year, and price. Implement a radio button menu that allows users to filter the displayed list of cars by make - Honda, Toyota, Ford, and Chevrolet - using the filter() function.
+
+export const Question15 = () => <Cars carsData={cars} />
+
+// 1️⃣6️⃣Create a React app that displays a list of clothing items with their name, brand, size, and price. Implement a radio button menu that allows users to filter the displayed list of clothing items by size - small, medium, large, and extra-large - using the filter() function.
+
+export const Question16 = () => <Cloths cloths={clothes} />

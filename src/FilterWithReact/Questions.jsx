@@ -1,4 +1,4 @@
-import { Question1, Question10, Question11, Question12, Question2, Question3, Question4, Question5, Question6, Question7, Question8, Question9 } from "./Set4"
+import { Question1, Question2, Question3, Question4, Question5, Question6, Question7, Question8, Question9, Question10, Question11, Question12, Question13, Question14, Question15, Question16 } from "./Set4"
 
 
 export const Questions = () => {
@@ -30,6 +30,15 @@ export const Questions = () => {
       <li><Question11 /></li>
       <hr />
       <li><Question12 /></li>
+      <hr />
+      {/* Radio Questions */}
+      <li><Question13 /></li>
+      <hr />
+      <li><Question14 /></li>
+      <hr />
+      <li><Question15 /></li>
+      <hr />
+      <li><Question16 /></li>
       <hr />
     </ol>
   )
