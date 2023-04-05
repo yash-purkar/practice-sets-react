@@ -1,5 +1,5 @@
 import React from 'react'
-import { employees, products, books, movies, pets, products2, books2, movies2, restaurants, jobData, eventsData, workouts, shampooData } from './Data'
+import { employees, products, books, movies, pets, products2, books2, movies2, restaurants, jobData, eventsData, workouts, shampooData, cars, clothes } from './Data'
 import { Employees } from './Components/Employees'
 import { Product } from './Components/Product'
 import { Books } from './Components/Books'
@@ -15,6 +15,7 @@ import { Workouts } from './Components/Workouts'
 import { Shampoos } from './Components/Shampoos'
 import { Movie3 } from './Components/Movie3'
 import { Cars } from './Components/Cars'
+import { Cloths } from './Components/Cloths'
 
 
 // 🔶INPUT TYPE QUESTIONS🔶
@@ -115,4 +116,8 @@ export const Question14 = () => <Movie3 moviesData={movies} />
 
 // 1️⃣5️⃣Create a React app that displays a list of cars with their make, model, year, and price. Implement a radio button menu that allows users to filter the displayed list of cars by make - Honda, Toyota, Ford, and Chevrolet - using the filter() function.
 
-export const Question15 = () => <Cars />
+export const Question15 = () => <Cars carsData={cars} />
+
+// 1️⃣6️⃣Create a React app that displays a list of clothing items with their name, brand, size, and price. Implement a radio button menu that allows users to filter the displayed list of clothing items by size - small, medium, large, and extra-large - using the filter() function.
+
+export const Question16 = () => <Cloths cloths={clothes} />

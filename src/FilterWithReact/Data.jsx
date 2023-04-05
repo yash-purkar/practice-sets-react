@@ -109,3 +109,23 @@ export const shampooData = [
   { id: 8, name: 'Suave', gender: 'unisex' },
   { id: 9, name: 'Tresemme', gender: 'unisex' },
 ];
+
+export const cars = [
+  { make: "Toyota", model: "Camry", year: 2022, price: 24900 },
+  { make: "Honda", model: "Civic", year: 2021, price: 22000 },
+  { make: "Ford", model: "F-150", year: 2023, price: 35000 },
+  { make: "Chevrolet", model: "Equinox", year: 2020, price: 18900 },
+  { make: "Ford", model: "Model S", year: 2022, price: 89990 },
+  { make: "Toyota", model: "M5", year: 2021, price: 103500 },
+  { make: "Honda", model: "S-Class", year: 2022, price: 122750 }
+];
+
+export const clothes = [
+  { name: "Cotton T-Shirt", brand: "Hanes", size: "Large", price: 15.99 },
+  { name: "Slim-Fit Jeans", brand: "Levi's", size: "Small", price: 79.50 },
+  { name: "Hooded Sweatshirt", brand: "Champion", size: "Extra-large", price: 35.99 },
+  { name: "Athletic Shorts", brand: "Nike", size: "Small", price: 25.00 },
+  { name: "Polo Shirt", brand: "Ralph Lauren", size: "Medium", price: 89.50 },
+  { name: "Sweater", brand: "Tommy Hilfiger", size: "Large", price: 69.99 }
+];
+
