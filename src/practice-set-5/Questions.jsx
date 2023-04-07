@@ -1,5 +1,5 @@
 import React from 'react';
-import { Product, Product2, Users } from './Set5';
+import { Product, Product2, Users, ShowImg, Users1, Chats } from './Set5';
 
 export const Questions = () => {
   return (
@@ -9,6 +9,12 @@ export const Questions = () => {
       <li><Product /></li>
       <hr />
       <li><Product2 /></li>
+      <hr />
+      <li><ShowImg heading="User Profile" width={200} height={200} /></li>
+      <hr />
+      <li><Users1 heading="Users Feed" width={200} height={200} /></li>
+      <hr />
+      <li><Chats /></li>
       <hr />
     </ol>
   )

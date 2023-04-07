@@ -51,3 +51,136 @@ export const fakeFetch2 = (url) => {
     }, 2000)
   })
 }
+
+//Q.4
+export const fakeFetch4 = (url) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (url === 'https://example.com/api/user') {
+        resolve({
+          status: 200,
+          message: 'Success',
+          data: {
+            name: 'Saroj',
+            image:
+              'https://cdn.pixabay.com/photo/2016/07/11/15/43/woman-1509956_1280.jpg',
+            likes: 500,
+            comments: 10,
+          },
+        })
+      } else {
+        reject({
+          status: 404,
+          message: 'user data not found.',
+        })
+      }
+    }, 2000)
+  })
+}
+
+//Q.5
+export const fakeFetch5 = (url) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (url === 'https://example.com/api/users') {
+        resolve({
+          status: 200,
+          message: 'Success',
+          data: [
+            {
+              name: 'Saroj',
+              image:
+                'https://cdn.pixabay.com/photo/2017/06/13/13/06/girl-2398822_1280.jpg',
+              likes: 500,
+              comments: 10,
+            },
+            {
+              name: 'Meeta',
+              image:
+                'https://cdn.pixabay.com/photo/2017/06/13/13/06/girl-2398822_1280.jpg',
+              likes: 200,
+              comments: 1,
+            },
+            {
+              name: 'Alia',
+              image:
+                'https://cdn.pixabay.com/photo/2017/06/13/13/06/girl-2398822_1280.jpg',
+              likes: 100,
+              comments: 5,
+            },
+          ],
+        })
+      } else {
+        reject({
+          status: 404,
+          message: 'users data not found.',
+        })
+      }
+    }, 2000)
+  })
+}
+
+// Q.6
+export const fakeFetch6 = (url) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (url === 'https://example.com/api/userchat') {
+        resolve({
+          status: 200,
+          message: 'Success',
+          data: [
+            {
+              name: 'Alia',
+              messages: [
+                {
+                  from: 'Alia',
+                  message: 'Good Morning',
+                },
+                {
+                  from: 'Ranvir',
+                  message: 'Good Morning, How are you?',
+                },
+              ],
+            },
+            {
+              name: 'Jeena',
+              messages: [
+                {
+                  from: 'Jeena',
+                  message: 'When is the meeting scheduled?',
+                },
+                {
+                  from: 'Seema',
+                  message: 'It is at 10AM tomorrow.',
+                },
+              ],
+            },
+            {
+              name: 'Abhay',
+              messages: [
+                {
+                  from: 'Abhay',
+                  message: 'Have you found a house yet?',
+                },
+                {
+                  from: 'John',
+                  message: 'No luck yet, still searching.',
+                },
+                {
+                  from: 'Abhay',
+                  message:
+                    'Hey, an apartment just got vacant in my bulding. Do you wanna have a look?',
+                },
+              ],
+            },
+          ],
+        })
+      } else {
+        reject({
+          status: 404,
+          message: 'users chat not found.',
+        })
+      }
+    }, 2000)
+  })
+}

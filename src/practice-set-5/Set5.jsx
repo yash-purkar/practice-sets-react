@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { fakeFetch, fakeFetch2 } from "./Data"
+import { fakeFetch, fakeFetch2, fakeFetch4, fakeFetch5, fakeFetch6 } from "./Data"
 import { useEffect } from "react";
 // 1️⃣Create a React component where all the users are fetched using fake fetch and listed on the DOM. Show the online users in green color and the offline users in red color.
 export const Users = () => {
@@ -130,6 +130,136 @@ export const Product2 = () => {
         {
           filteredProducts.map(({ name, price, quantity }, i) => {
             return <li key={i}>{name} -- INR {price} Qty: {quantity}</li>
+          })
+        }
+      </ul>
+    </>
+  )
+}
+
+// 4️⃣Create a React component that fetches a user’s data from an API endpoint using useEffect hook and displays the data (name, image, likes, comments) on the screen using the useState hook. Pass heading (”User Profile”) and width and height for image as props to the component.
+export const ShowImg = ({ heading, width, height }) => {
+  const [userData, setUserData] = useState({});
+
+  const getData = async (url) => {
+    try {
+      const { status, data } = await fakeFetch4(url)
+      status === 200 && setUserData(data)
+    } catch ({ status, message }) {
+      console.log(status, message)
+    }
+  }
+
+  const { name, image, likes, comments } = userData;
+
+
+  useEffect(() => {
+    getData('https://example.com/api/user')
+  }, [])
+
+  return (
+    <>
+      <div>
+        <h1>{heading}</h1>
+        <img src={image} alt="img" height={height} width={width} />
+        <p>Name: {name}</p>
+        <p>Likes: {likes}</p>
+        <p>Comments: {comments}</p>
+      </div>
+    </>
+  )
+}
+
+
+// 5️⃣Create a React component that fetches users data from an API endpoint using useEffect hook and display users data (name, image, likes, comments) as a list on the screen using the useState hook.
+
+// a. Show “Loading…” until your data displays on the DOM.
+
+// b. Handle errors by showing an error message on the DOM, in case of any error.
+export const Users1 = ({ heading, width, height }) => {
+  const [usersData, setUsersData] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  const getUsersData = async (url) => {
+    try {
+      const { status, data } = await fakeFetch5(url);
+      setLoading(false)
+      status === 200 && setUsersData(data)
+    } catch ({ status, message }) {
+      console.log(status, message)
+    }
+  }
+
+  useEffect(() => {
+    setLoading(true)
+    getUsersData("https://example.com/api/users")
+  }, [])
+  return (
+    <>
+      {loading && <h1>Loading...</h1>}
+      <h1>{heading}</h1>
+      <ul>
+        {
+          usersData.map(({ name, image, likes, comments }, i) => {
+            return (
+              <li key={i}>
+                <img src={image} alt="img" height={height} width={width} />
+                <p>{name}</p>
+                <p>Likes: {likes}</p>
+                <p>Comments: {comments}</p>
+              </li>
+            )
+          })
+        }
+      </ul>
+    </>
+  )
+}
+
+
+// 6️⃣Create a React component that fetches chat data from an API endpoint using useEffect hook and display chat data (name and chat message) as a list on the screen using the useState hook.
+
+// a. Show “Loading Chats…” until your data displays on the DOM.
+
+
+const MessageList = ({ messages }) => {
+  return (
+    <ul>
+      {
+        messages.map(({ from, message }) => {
+          return <li><strong>{from}:</strong>{message}</li>
+        })
+      }
+    </ul>
+  )
+}
+
+export const Chats = () => {
+  const [chatsData, setChatsData] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  const getChatsData = async (url) => {
+    const { status, data } = await fakeFetch6(url);
+    setLoading(false)
+    status === 200 && setChatsData(data)
+  }
+
+  useEffect(() => {
+    setLoading(true)
+    getChatsData("https://example.com/api/userchat")
+  }, [])
+  return (
+    <>
+      {loading && <h1>Loading...</h1>}
+      <ul>
+        {
+          chatsData.map(({ name, messages }, i) => {
+            return (
+              <li key={i}>
+                <h2>{name}'s Chat</h2>
+                <MessageList messages={messages} />
+              </li>
+            )
           })
         }
       </ul>
