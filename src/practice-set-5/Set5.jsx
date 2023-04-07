@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { fakeFetch, fakeFetch2, fakeFetch4, fakeFetch5, fakeFetch6 } from "./Data"
+import { fakeFetch, fakeFetch2, fakeFetch4, fakeFetch5, fakeFetch6, fakeFetch7 } from "./Data"
 import { useEffect } from "react";
 // 1️⃣Create a React component where all the users are fetched using fake fetch and listed on the DOM. Show the online users in green color and the offline users in red color.
 export const Users = () => {
@@ -226,8 +226,8 @@ const MessageList = ({ messages }) => {
   return (
     <ul>
       {
-        messages.map(({ from, message }) => {
-          return <li><strong>{from}:</strong>{message}</li>
+        messages.map(({ from, message }, i) => {
+          return <li key={i}><strong>{from}:</strong>{message}</li>
         })
       }
     </ul>
@@ -263,6 +263,61 @@ export const Chats = () => {
           })
         }
       </ul>
+    </>
+  )
+}
+
+
+// 7️⃣Create a React component called Comments.
+
+// a. Fetch the comments using thefake fetch and list the data on DOM.
+
+// b. Each comment component will have the text, user’s name and a delete button.
+
+// c. On click of the delete button, that particular comment object should be deleted and should not be visible on the DOM.
+
+const Comment = ({ commentsData, setCommentsData }) => {
+
+  const handleClick = (selectedName) => {
+    const filteredComments = commentsData.filter(({ name }) => name !== selectedName);
+    setCommentsData(filteredComments);
+  }
+
+  return (
+    <>
+      {
+        commentsData.map(({ name, text }, i) => {
+          return (
+            <div key={i}>
+              <h2>{name}</h2>
+              <p>{text}</p>
+              <button onClick={() => handleClick(name)}>Delete</button>
+            </div>
+          )
+        })
+      }
+    </>
+  )
+}
+
+
+
+export const Comments = () => {
+  const [commentsData, setCommentsData] = useState([]);
+
+  const getCommentsData = async (url) => {
+    const { status, data: { comments } } = await fakeFetch7(url);
+    status === 200 && setCommentsData(comments);
+  }
+
+
+  useEffect(() => {
+    getCommentsData('https://example.com/api/comments');
+  }, [])
+
+  return (
+    <>
+      <Comment commentsData={commentsData} setCommentsData={setCommentsData} />
     </>
   )
 }
