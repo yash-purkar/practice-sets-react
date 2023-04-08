@@ -6,7 +6,8 @@ import './App.css';
 // import { Questions } from './practice-set-3/Questions'
 // import { Questions } from './FilterWithReact/Questions';
 // import { Questions } from './practice-set-4/Questions';
-import { Questions } from './practice-set-5/Questions';
+// import { Questions } from './practice-set-5/Questions';
+import { Questions } from './practice-set-6/Questions';
 
 
 function App() {
