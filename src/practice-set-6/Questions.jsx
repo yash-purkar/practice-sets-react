@@ -1,5 +1,5 @@
 import React from 'react'
-import { HabitTracker, Product, Todo, VideoLibrary } from './Set6'
+import { HabitTracker, HabitTracker2, Product, SocialMedia, Todo, VideoLibrary } from './Set6'
 
 export const Questions = () => {
   return (
@@ -12,6 +12,9 @@ export const Questions = () => {
       <hr />
       <li><VideoLibrary /></li>
       <hr />
+      <li><SocialMedia /></li>
+      <hr />
+      <li><HabitTracker2 /></li>
     </ol>
   )
 }
