@@ -9,7 +9,7 @@ import { ShowData } from './Components.jsx/ShowData';
 import { Habits } from './Components.jsx/Habits';
 import { ShowProjects } from './Components.jsx/ShowProjects';
 import { ShowDetails } from './Components.jsx/ShowDetails';
-import { User } from './User';
+import { User } from './Components.jsx/User';
 import { ShowVideoDetails } from './Components.jsx/ShowVideoDetails';
 import { ShowProfile } from './Components.jsx/ShowProfile';
 
@@ -230,7 +230,7 @@ export const UserProfile = () => {
   return (
     <>
       <h1>Profiles</h1>
-      {userData && <User userData={userData} />}
+      {userData && <User userData={userData} setUserData={setUserData} />}
     </>
   )
 }
