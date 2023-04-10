@@ -32,3 +32,40 @@ export const QuestionsByMAs = () => {
     </>
   );
 }
+
+
+
+// 🔶Create a React component that displays a list of tasks, each with a checkbox next to it. When a checkbox is checked, display the task as strikethrough text.
+export default function App() {
+  const [tasks, setTasks] = useState([
+    { id: 1, text: "Clean the house", completed: false },
+    { id: 2, text: "Do laundry", completed: false },
+    { id: 3, text: "Buy groceries", completed: false }
+  ]);
+
+  const handleChange = (clickedId) => {
+    setTasks((prevTasks) => {
+      return prevTasks.map((el) =>
+        el.id === clickedId ? { ...el, completed: !el.completed } : el
+      );
+    });
+  };
+  return (
+    <div>
+      {tasks.map((task) => (
+        <div key={task.id}>
+          <input
+            type="checkbox"
+            checked={task.completed}
+            onChange={() => handleChange(task.id)}
+          />
+          <span
+            style={{ textDecoration: task.completed ? "line-through" : "none" }}
+          >
+            {task.text}
+          </span>
+        </div>
+      ))}
+    </div>
+  );
+}

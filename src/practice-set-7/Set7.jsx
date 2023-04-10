@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { fakeFetch, fakeFetch2, fakeFetch3, fakeFetch4 } from './Data';
+import { fakeFetch, fakeFetch2, fakeFetch3, fakeFetch4, fakeFetch5 } from './Data';
 import { ShowWeatherInfo } from './Components.jsx/ShowWeatherInfo';
 import { ShowUser } from './Components.jsx/ShowUser';
 import { ShowMovie } from './Components.jsx/ShowMovie';
@@ -178,3 +178,40 @@ export const Users = () => {
 
 // 1st - print the data on UI
 //print dropdown using map and filtered on onChange value
+//loading state
+
+
+
+// 5️⃣Create a component that displays a random quote from an API using the useEffect and useState hooks. The component should fetch a new quote when the user clicks a button.
+
+export const QuotesGenerator = () => {
+  const [quote, setQuote] = useState({});
+  const [loading, setLoading] = useState(false)
+
+  const getQuote = async () => {
+    setLoading(true)
+    const response = await fakeFetch5()
+    setLoading(false)
+    setQuote(response)
+  }
+
+  const { content, author } = quote;
+  useEffect(() => {
+    getQuote()
+  }, [])
+  return (
+    <>
+      {loading ? <p>Loading Quote....</p>
+        :
+        <div> <p>"{content}"</p>
+          <p>- {author}</p>
+          <button onClick={() => getQuote()}>New Quote</button></div>
+      }
+
+    </>
+  )
+}
+
+//get data from and show one quote by default
+//onClick of btn call that function again
+//Loading
