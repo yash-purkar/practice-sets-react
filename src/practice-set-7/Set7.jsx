@@ -189,10 +189,14 @@ export const QuotesGenerator = () => {
   const [loading, setLoading] = useState(false)
 
   const getQuote = async () => {
-    setLoading(true)
-    const response = await fakeFetch5()
-    setLoading(false)
-    setQuote(response)
+    try {
+      setLoading(true)
+      const response = await fakeFetch5()
+      setLoading(false)
+      setQuote(response)
+    } catch (err) {
+      console.log(err)
+    }
   }
 
   const { content, author } = quote;
@@ -205,7 +209,8 @@ export const QuotesGenerator = () => {
         :
         <div> <p>"{content}"</p>
           <p>- {author}</p>
-          <button onClick={() => getQuote()}>New Quote</button></div>
+          <button onClick={getQuote}>New Quote</button>
+        </div>
       }
 
     </>
