@@ -418,7 +418,7 @@ export const Products3 = () => {
 // 🔟Adding on to the previous question, Add a search bar to the component that allows users to filter the products by name. The search bar should update the list of displayed products in real-time as the user types. The search functionality should be case-insensitive.
 export const Products4 = () => {
   const [productsData, setProductsData] = useState([]);
-  const [inputValue, setInputValue] = useState(""); //color
+  const [inputValue, setInputValue] = useState(""); //col
   const getProductsDetails = async () => {
     try {
       const { status, data: { products } } = await fakeFetch10("https://example.com/api/products");
@@ -438,16 +438,11 @@ export const Products4 = () => {
   useState(() => {
     getProductsDetails()
   }, [])
-
-  const filteredData = inputValue ? productsData.filter(({ name }) => { //color
-    let newName = ""
-    for (let i = 0; i < inputValue.length; i++) {
-      newName += name[i]  //color //sketc
-    }
-
-    return newName.toLowerCase() === inputValue.toLowerCase() //color===color //sketc===color F
+  //pen
+  // input ? T
+  const filteredData = inputValue ? productsData.filter(({ name }) => { //
+    return name.toLowerCase().includes(inputValue.toLowerCase())
   }) : productsData;
-
   return (
     <>
       <h1 >Products</h1>
