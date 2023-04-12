@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from 'react'
-import { fakeFetch, fakeFetch2, fakeFetch3, fakeFetch4, fakeFetch5 } from './Data';
+import { fakeFetch, fakeFetch10, fakeFetch2, fakeFetch3, fakeFetch4, fakeFetch5, fakeFetch6, fakeFetch7, fakeFetch8, fakeFetch9 } from './Data';
 import { ShowWeatherInfo } from './Components.jsx/ShowWeatherInfo';
 import { ShowUser } from './Components.jsx/ShowUser';
 import { ShowMovie } from './Components.jsx/ShowMovie';
 import { ShowUser2 } from './Components.jsx/ShowUser2';
+import { ShowMovie2 } from './Components.jsx/ShowMovie2';
+import { ShowProduct } from './Components.jsx/ShowProduct';
+import { Buttons } from './Components.jsx/Buttons';
+import { ShowProduct2 } from './Components.jsx/ShowProduct2';
 
 // 1️⃣Create a React component that fetches weather data from an API endpoint using useEffect hook and displays the current temperature, humidity, and wind speed on the screen using the useState hook. Add a button which toggles between Celsius and Fahrenheit units for the temperature.
 export const Weather = () => {
@@ -220,3 +224,240 @@ export const QuotesGenerator = () => {
 //get data from and show one quote by default
 //onClick of btn call that function again
 //Loading
+
+
+
+// 6️⃣Create a React component that fetches a list of movies from an API endpoint using useEffect hook and displays the title, year, and genre of each movie on the screen using the useState hook. Add a dropdown which filters the movies by genre.
+
+export const Movies2 = () => {
+  const [moviesData, setMoviesData] = useState([]);
+  const [selectedGenreMovies, setSelectedGenreMovies] = useState([]);
+  const [loading, setLoading] = useState(false)
+
+  const getMoviesData = async () => {
+    try {
+      setLoading(true)
+      const { status, data } = await fakeFetch6("https://example.com/api/movies");
+      setLoading(false)
+      if (status === 200) {
+        setMoviesData(data)
+        setSelectedGenreMovies(data)
+      }
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
+  const changeHandler = (e) => {
+    const selectedGenre = e.target.value
+    const newMovies = selectedGenre === "All" ? moviesData : moviesData.filter(({ genre }) => selectedGenre === genre);
+    setSelectedGenreMovies(newMovies)
+  }
+
+
+  useEffect(() => {
+    getMoviesData();
+  }, [])
+  return (
+    <>
+      {
+        loading ? <h1>Loading...</h1> : <div>
+          <h1>Movies</h1>
+          <select onChange={changeHandler}>
+            {["All", "Crime", "Drama", "Action", "Comedy", "Science Fiction"].map((genre) => <option value={genre}>{genre}</option>)}
+          </select>
+          <ul>
+            {
+              selectedGenreMovies.map((movie) => <ShowMovie2 {...movie} />)
+            }
+          </ul>
+        </div>
+      }
+
+
+    </>
+  )
+}
+//1st display the data
+//add dropdown
+
+
+// 7️⃣ Create a React component that fetches a list of products from an e-commerce API endpoint using useEffect hook and displays the product name, description, price, and quantity on the screen using the useState hook. Add a button which allows the user to sort the products by price (lowest to highest).
+
+export const Products = () => {
+  const [products, setProducts] = useState([]);
+  const [sortedData, setSortedData] = useState([]);
+  const getProductsData = async () => {
+    try {
+      const { status, data: { products } } = await fakeFetch7("https://example.com/api/products");
+      if (status === 200) {
+        setProducts(products)
+        setSortedData(products)
+      }
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
+  const handleSortClick = () => {
+    const newArrOfProducts = [...products];
+    const sortedProducts = newArrOfProducts.sort((a, b) => a.price - b.price)
+    setSortedData(sortedProducts)
+  }
+
+  useEffect(() => {
+    getProductsData()
+  })
+  return (
+    <>
+      <h1>Products</h1>
+      <button onClick={handleSortClick}>Sort By Price</button>
+      <ul>
+        {
+          sortedData.map((product, i) => <ShowProduct {...product} key={i} />)
+        }
+      </ul>
+    </>
+  )
+}
+
+//print Data
+//sort and print again
+//sort mutates the original array
+//e.g  original {20,19,24}
+//after sort {19,20,24}
+//console original array => 19,20,24
+
+
+
+// 8️⃣ Adding on to the previous question, There should be three buttons for this purpose: "Low to High", "High to Low", and "Reset". When the user clicks on "Low to High", the products should be sorted by price in ascending order. When the user clicks on "High to Low", the products should be sorted by price in descending order. When the user clicks on "Reset", the products should be displayed in their original order.
+export const Products2 = () => {
+  const [products, setProducts] = useState([]);
+  const [sortedProducts, setSortedProducts] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const getProductDetails = async () => {
+    setLoading(true)
+    try {
+      const { status, data: { products } } = await fakeFetch8("https://example.com/api/products");
+      setLoading(false)
+      if (status === 200) {
+        setProducts(products)
+        setSortedProducts(products)
+      }
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
+  useEffect(() => {
+    getProductDetails()
+  }, [])
+  return (
+    <>
+      {
+        loading ? <h1>Loading...</h1>
+          :
+          <div><h1>Products</h1>
+            <Buttons products={products} setSortedProducts={setSortedProducts} />
+            <ul>
+              {
+                sortedProducts.map((product) => <ShowProduct {...product} />)
+              }
+            </ul></div>
+      }
+
+    </>
+  )
+}
+
+//show Data on ui
+//sort by btn click
+
+
+
+// 9️⃣Create a React component that uses the useEffect hook to fetch the product data from the API endpoint using the fakeFetch function provided below. The component should use the useState hook to store the fetched data and a second state variable to store the sorted data. The sorted data should be sorted in descending order by rating.
+
+export const Products3 = () => {
+  // const [productsData, setProductsData] = useState([]);
+  const [sortedData, setSortedData] = useState([]);
+  const getProductDetails = async () => {
+    try {
+      const { status, data: { products } } = await fakeFetch9("https://example.com/api/products");
+      if (status === 200) {
+        // setProductsData(products);
+        setSortedData([...products].sort((a, b) => b.rating - a.rating))
+      }
+    } catch (err) {
+      console.log(err)
+    }
+
+  }
+
+
+  useEffect(() => {
+    getProductDetails()
+  }, [])
+
+  return (
+    <>
+      <h1>Product</h1>
+
+      <ul>
+        {
+          sortedData.map((el) => <ShowProduct2 {...el} />)
+        }
+      </ul>
+    </>
+  )
+}
+
+//Show data
+
+
+
+// 🔟Adding on to the previous question, Add a search bar to the component that allows users to filter the products by name. The search bar should update the list of displayed products in real-time as the user types. The search functionality should be case-insensitive.
+export const Products4 = () => {
+  const [productsData, setProductsData] = useState([]);
+  const [inputValue, setInputValue] = useState(""); //color
+  const getProductsDetails = async () => {
+    try {
+      const { status, data: { products } } = await fakeFetch10("https://example.com/api/products");
+      if (status === 200) {
+        setProductsData(products)
+      }
+    } catch (err) {
+      console.log("hi")
+    }
+
+  }
+
+  const handleChange = (e) => {
+    setInputValue(e.target.value);
+  }
+
+  useState(() => {
+    getProductsDetails()
+  }, [])
+
+  const filteredData = inputValue ? productsData.filter(({ name }) => { //color
+    let newName = ""
+    for (let i = 0; i < inputValue.length; i++) {
+      newName += name[i]  //color //sketc
+    }
+
+    return newName.toLowerCase() === inputValue.toLowerCase() //color===color //sketc===color F
+  }) : productsData;
+
+  return (
+    <>
+      <h1 >Products</h1>
+      <input type="text" onChange={handleChange} style={{ marginBottom: "1rem" }} placeholder='Serch Item...' value={inputValue} />
+      {
+        filteredData.map((product) => <ShowProduct2 {...product} />)
+      }
+    </>
+  )
+}
+
+//Display datao on UI
+//get inputvalue

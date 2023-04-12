@@ -130,3 +130,221 @@ export const fakeFetch5 = () => {
     }, 1000);
   });
 };
+
+export const fakeFetch6 = (url) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (url === "https://example.com/api/movies") {
+        resolve({
+          status: 200,
+          message: "Success",
+          data: [
+            {
+              title: "The Godfather",
+              year: 1972,
+              genre: "Crime"
+            },
+            {
+              title: "The Shawshank Redemption",
+              year: 1994,
+              genre: "Drama"
+            },
+            {
+              title: "The Dark Knight",
+              year: 2008,
+              genre: "Action"
+            },
+            {
+              title: "Forrest Gump",
+              year: 1994,
+              genre: "Comedy"
+            },
+            {
+              title: "The Matrix",
+              year: 1999,
+              genre: "Science Fiction"
+            },
+            {
+              title: "Jurassic Park",
+              year: 1993,
+              genre: "Science Fiction"
+            },
+            {
+              title: "Star Wars: Episode IV - A New Hope",
+              year: 1977,
+              genre: "Science Fiction"
+            },
+            {
+              title: "The Terminator",
+              year: 1984,
+              genre: "Action"
+            },
+            {
+              title: "Die Hard",
+              year: 1988,
+              genre: "Action"
+            },
+            {
+              title: "Pulp Fiction",
+              year: 1994,
+              genre: "Crime"
+            }
+          ]
+        });
+      } else {
+        reject({
+          status: 404,
+          message: "Movies list not found."
+        });
+      }
+    }, 2000);
+  });
+};
+
+export const fakeFetch7 = (url) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (url === "https://example.com/api/products") {
+        resolve({
+          status: 200,
+          message: "Success",
+          data: {
+            products: [
+              {
+                name: "Product 1",
+                description: "This is the first product",
+                price: 25.99,
+                quantity: 10
+              },
+              {
+                name: "Product 2",
+                description: "This is the second product",
+                price: 19.99,
+                quantity: 15
+              },
+              {
+                name: "Product 3",
+                description: "This is the third product",
+                price: 35.50,
+                quantity: 5
+              },
+              {
+                name: "Product 4",
+                description: "This is the fourth product",
+                price: 49.99,
+                quantity: 20
+              }
+            ]
+          }
+
+        });
+      } else {
+        reject({
+          status: 404,
+          message: "Product list not found."
+        });
+      }
+    }, 2000);
+  });
+};
+
+export const fakeFetch8 = (url) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (url === "https://example.com/api/products") {
+        resolve({
+          status: 200,
+          message: "Success",
+          data: {
+            products: [
+              {
+                name: "Product 1",
+                description: "This is the first product",
+                price: 25.99,
+                quantity: 10
+              },
+              {
+                name: "Product 2",
+                description: "This is the second product",
+                price: 19.99,
+                quantity: 15
+              },
+              {
+                name: "Product 3",
+                description: "This is the third product",
+                price: 35.50,
+                quantity: 5
+              },
+              {
+                name: "Product 4",
+                description: "This is the fourth product",
+                price: 49.99,
+                quantity: 20
+              }
+            ]
+          }
+
+        });
+      } else {
+        reject({
+          status: 404,
+          message: "Product list not found."
+        });
+      }
+    }, 2000);
+  });
+};
+
+export const fakeFetch9 = (url) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (url === "https://example.com/api/products") {
+        resolve({
+          status: 200,
+          message: "Success",
+          data: {
+            products: [
+              { name: "Color Pencils", price: 50, quantity: 40, rating: 4.5 },
+              { name: "Sketchpens", price: 110, quantity: 20, rating: 3.8 },
+              { name: "Eraser", price: 20, quantity: 20, rating: 4.2 },
+              { name: "Sharpener", price: 22, quantity: 30, rating: 4.7 }
+            ]
+          }
+
+        });
+      } else {
+        reject({
+          status: 404,
+          message: "Product list not found."
+        });
+      }
+    }, 2000);
+  });
+};
+
+export const fakeFetch10 = (url) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (url === "https://example.com/api/products") {
+        resolve({
+          status: 200,
+          message: "Success",
+          data: {
+            products: [
+              { name: "Color Pencils", price: 50, quantity: 40, rating: 4.5 },
+              { name: "Sketchpens", price: 110, quantity: 20, rating: 3.8 },
+              { name: "Eraser", price: 20, quantity: 20, rating: 4.2 },
+              { name: "Sharpener", price: 22, quantity: 30, rating: 4.7 }
+            ]
+          }
+
+        });
+      } else {
+        reject({
+          status: 404,
+          message: "Product list not found."
+        });
+      }
+    }, 2000);
+  });
+};
