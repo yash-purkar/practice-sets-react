@@ -1,5 +1,5 @@
 import React from 'react'
-import { Movies, QuotesGenerator, User, Users, Weather } from './Set7'
+import { Movies, Movies2, Products, Products2, Products3, QuotesGenerator, User, Users, Weather, Products4 } from './Set7'
 
 export const Questions = () => {
   return (
@@ -14,6 +14,15 @@ export const Questions = () => {
       <hr />
       <li><QuotesGenerator /></li>
       <hr />
+      <li><Movies2 /></li>
+      <hr />
+      <li><Products /></li>
+      <hr />
+      <li><Products2 /></li>
+      <hr />
+      <li><Products3 /></li>
+      <hr />
+      <li><Products4 /></li>
     </ol>
   )
 }
