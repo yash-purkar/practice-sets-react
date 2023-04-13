@@ -1,9 +1,10 @@
 import React from 'react'
 
 export const SuperPower = ({ cartoons, data }) => {
+  const fitleredData = cartoons.filter(({ superpower }) => superpower === data)
   return (
     <ul>
-      {cartoons.map(({ name, superpower, magnitude }) => superpower === data ? <li>Name: {name}, superpower: {superpower}, magnitude: {magnitude}</li> : null)}
+      {fitleredData.map(({ name, superpower, magnitude }) => <li>Name: {name}, superpower: {superpower}, magnitude: {magnitude}</li>)}
     </ul>
   )
 }

@@ -15,15 +15,12 @@ export const Todo1 = ({ todoItems }) => {
     <ul>
       {
         todoItems.map(({ id, task, isDone }) => {
-          return <ListItems key={id} task={task} isDone={isDone} /> //poem false
+          return <ListItems key={id} task={task} isDone={isDone} />
         })
       }
     </ul>
   )
 }
-
-
-
 
 /*import React, { useState } from "react";
 
