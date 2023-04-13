@@ -1,10 +1,11 @@
 import React from 'react'
 
 export const Flowers = ({ bouquet }) => {
+  const filteredData = bouquet.filter(({ flowers }) => flowers.includes("rose"))
   return (
     <>
       {
-        bouquet.map(({ flowers, price }) => flowers.map(flower => flower === "rose" ? <h1>Price of bouquet with roses : {price}</h1> : null))
+        filteredData.map(({ id, price }) => <h1 key={id}>Price of bouquet with roses : {price}</h1>)
       }
     </>
   )
@@ -12,9 +13,11 @@ export const Flowers = ({ bouquet }) => {
 
 
 export const ExpensiveBouquet = ({ bouquet }) => {
+  const filteredData = bouquet.filter(({ price }) => price > 2000)
   return (
     <ol >
-      {bouquet.map(({ id, flowers, price }) => price > 2000 ? flowers.map(flower => <li key={id}>{flower}</li>) : null)}
-    </ol>
+      {filteredData.map(({ id, flowers, price }) => flowers.map((flower) => <li>{flower}</li>))}
+      {/* {filteredData.map(({ id, flowers, price }) =><li key={id}>{flower}</li>} */}
+    </ol >
   )
 }

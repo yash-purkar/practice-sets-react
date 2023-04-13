@@ -1,9 +1,10 @@
 import React from 'react'
 
 export const EvenCartoons = ({ data }) => {
+  const filteredData = data.filter(({ magnitude }) => magnitude % 2 === 0);
   return (
 
-    data.map(({ name, magnitude }) => magnitude % 2 === 0 ? <h1>{name}</h1> : null)
+    filteredData.map(({ name }) => <h1>{name}</h1>)
 
   )
 }

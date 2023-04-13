@@ -438,11 +438,12 @@ export const Products4 = () => {
   useState(() => {
     getProductsDetails()
   }, [])
-  //pen
-  // input ? T
-  const filteredData = inputValue ? productsData.filter(({ name }) => { //
+
+
+  const filteredData = inputValue ? productsData.filter(({ name }) => {
     return name.toLowerCase().includes(inputValue.toLowerCase())
   }) : productsData;
+
   return (
     <>
       <h1 >Products</h1>

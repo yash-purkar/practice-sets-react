@@ -2,7 +2,7 @@ import React from 'react'
 
 export const Cars = ({ carsData }) => {
 
-  const categories = carsData.reduce((acc, { category }) => {
+  const {luxury,sports} = carsData.reduce((acc, { category }) => {
     // if (acc[category]) acc[category] += 1
     // else acc[category] = 1;
     // return acc;
@@ -10,7 +10,6 @@ export const Cars = ({ carsData }) => {
 
   }, {})
   // console.log(categories);
-  const { luxury, sports } = categories;
 
   return (
     <div>
@@ -21,7 +20,6 @@ export const Cars = ({ carsData }) => {
     </div>
   )
 }
-
 
 
 //1st acc.sports ? False 
