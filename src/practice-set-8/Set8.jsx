@@ -88,3 +88,11 @@ export const Ecommerce = () => {
 // add button with each product in ProductListing page
 //create a new context in contexts folder WishListContext and create state variable there and provide the wishlistData from there and also handleWishlistUpdate fn and set the previous data and add the current data in wishlist data.
 //consume that data in Wishlist component and print there using map.
+
+
+// 5️⃣In the question above, add a “Remove from Wishlist” button in the My Wishlist page for each product. On click of this button, the product should be removed from the Wishlist.
+// step->
+//1st add "Remove from Wishlist" btn in Wishlist page for every product
+//create a state for filteredWishlist
+//create a function which will remove product from wishlist by comparing id
+//onClick of btn pass the id to fn and remove that product which id is matching with the product which is in filteredWishlist.
