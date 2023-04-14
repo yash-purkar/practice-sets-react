@@ -6,6 +6,9 @@ import { Navbar } from './Q1/Components-Q1/Navbar'
 import { ProductDetail } from './Q1/Pages-Q1/ProductDetail'
 import { useEffect, useState } from 'react'
 import { fakeFetch } from './Data'
+
+
+
 // 1️⃣ Create an e-commerce App in React with different routes for:
 
 // Product listing page - fakeFetch has been provided. Fetch the data and display on the product listing page.
@@ -42,6 +45,8 @@ export const Ecommerce = () => {
     </>
   )
 }
+
+// 1️⃣ For Question1
 //1st make all components
 //2nd Routes and navbar
 //(in productListing) fetch data and store it in state variable and show on productListng page, make a seprate component (productCard) to show details
@@ -51,3 +56,16 @@ export const Ecommerce = () => {
 //Pass noDetail boolean from ProductDetail bcz in ProductCard it'll true
 //make a productDetail component and onClick of view Details navLink pass the id of the product in to and in Route take it as productId and use this id in productDetail to compare and use find() to find the product. pass a data to productDetail comp from set8 so we can compare that id.
 //call a productCard comp and pass the finded object there and don't pass noDetail so it'll undefined and in productCard it will false..
+
+
+// 2️⃣For Question2
+// Question -> // In the above question, in your product listing page add a “Add to Cart” button along with each product. On click of the button, add that item to your cart. The added product should be visible in the My Cart page. Show the total number of items available in the cart at the top of the page. Do this using context.
+
+//Steps ->
+// add "Add to Cart" button apply condition of noDetail
+//2nd create another folder and file for context
+//create a context with name CartContext
+//in that file create a component and in return of that comp provide a values
+//create a state to store cart data
+//create a handleUpdateCart fn and use it in productCard and onClick of a btn call this fn and pass a item to it
+//consume that cartData in Cart component and  call a ProductCard component and don't pass noDetail so it'll show the details

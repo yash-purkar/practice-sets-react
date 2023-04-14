@@ -14,6 +14,7 @@ export const ProductDetail = ({ productsData }) => {
   return (
     <>
       <ul>
+        <h1>About</h1>
         <ProductCard {...product} />
       </ul>
       <NavLink to="/">Show All Products</NavLink>

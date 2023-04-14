@@ -2,13 +2,14 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 
 export const Navbar = () => {
+  const getActiveStyle = ({ isActive }) => ({ fontWeight: isActive && "bold", color: isActive && "orange" })
   return (
     <nav>
-      <NavLink to="/">Products</NavLink>
+      <NavLink to="/" style={getActiveStyle}>Products</NavLink>
       <br />
-      <NavLink to="/cart">My Cart</NavLink>
+      <NavLink to="/cart" style={getActiveStyle}>My Cart</NavLink>
       <br />
-      <NavLink to="/wishlist">My Wishlist</NavLink>
+      <NavLink to="/wishlist" style={getActiveStyle}>My Wishlist</NavLink>
     </nav>
   )
 }
