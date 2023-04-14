@@ -1,0 +1,25 @@
+ul li {
+  border: 1px solid gray;
+  margin: 1rem;
+  padding: 2rem;
+  width: 600px;
+  list-style-type: none;
+}
+
+ol {
+  width: 800px;
+  margin: auto;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+nav {
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
