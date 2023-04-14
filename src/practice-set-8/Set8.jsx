@@ -75,10 +75,11 @@ export const Ecommerce = () => {
 // In the question above, add a “Remove from cart” button in the My Cart page for each product. On click of this button, the product should be removed from the cart.
 
 // steps -> add "Remove from cart" btn in map in removeCart
-//make a new state in Cart filteredData,setF... set the initial value to the cartData
-//call a removeClickHandler on click of remove btn pass an id
-//and compare the passed id with the data which is in filtered data so , if we put filter on cartData then only that item will be removed and previous deleted will be came
-//so use filter() on filteredData state variable.
+// make a new handleCartRemove function in a cartContext and provide it
+//this fn will take an id and will compare with cartData id and it will remove item.
+//consume this fn in cart component
+// and call on a click of btn and pass id to it.
+
 
 
 // 4️⃣For Question4
@@ -93,6 +94,6 @@ export const Ecommerce = () => {
 // 5️⃣In the question above, add a “Remove from Wishlist” button in the My Wishlist page for each product. On click of this button, the product should be removed from the Wishlist.
 // step->
 //1st add "Remove from Wishlist" btn in Wishlist page for every product
-//create a state for filteredWishlist
-//create a function which will remove product from wishlist by comparing id
-//onClick of btn pass the id to fn and remove that product which id is matching with the product which is in filteredWishlist.
+//create removeWishlistHandler fn in Wishlist Context and provide it.
+//this fn will take an id and it'll compare that id with wishlistData.id and it'll remove product
+//consume this fn in Wishlist and call on click of remove from wishlist btn and pass an id to it.

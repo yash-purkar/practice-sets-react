@@ -7,9 +7,13 @@ export const WishListProvider = ({ children }) => {
   const handleWishlistData = (item) => {
     setWishlistData([...wishlistData, item]);
   }
+
+  const handleRemoveFromWishList = (removeId) => {
+    setWishlistData(wishlistData.filter(({ id }) => removeId !== id));
+  }
   // console.log(wishlistData)
   return (
-    <WishlistContext.Provider value={{ wishlistData, handleWishlistData }}>
+    <WishlistContext.Provider value={{ wishlistData, handleWishlistData, handleRemoveFromWishList }}>
       {children}
     </WishlistContext.Provider>
   )
