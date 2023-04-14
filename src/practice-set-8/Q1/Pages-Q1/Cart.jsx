@@ -7,6 +7,7 @@ export const Cart = () => {
   const { cartData, handleCartRemove } = useContext(CartContext);
   // console.log(cartData)
 
+  const totalPrice = cartData.reduce((acc, { price }) => acc + price, 0);
 
   return (
     <>
@@ -25,6 +26,7 @@ export const Cart = () => {
           })
         }
       </ul>
+      <h2>Total Price: ${totalPrice}</h2>
     </>
   )
 }
