@@ -1,11 +1,9 @@
-import React, { useContext } from 'react'
+
 import { NavLink } from 'react-router-dom'
-import { CartContext } from '../../Questions';
 
-export const ProductCard = (item) => {
-  const { handleCartUpdate } = useContext(CartContext);
 
-  const { id, name, description, price, quantity, category, brand, noDetail } = item;
+export const ProductCard = ({ id, name, description, price, quantity, category, brand, noDetail }) => {
+
   return (
     <li>
 
@@ -21,7 +19,7 @@ export const ProductCard = (item) => {
       }
       {noDetail && <NavLink to={`/product/${id}`}>View Details</NavLink>}
 
-      {noDetail && <button onClick={() => handleCartUpdate(item)}>Add to Cart</button>}
+
     </li>
   )
 }

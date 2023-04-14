@@ -3,8 +3,10 @@ import { Ecommerce } from './Set8'
 import { BrowserRouter as Router } from 'react-router-dom'
 import { CartProvider, CartContext } from './Q1/Contexts/CartContext'
 import './styles.css'
+import { WishListProvider, WishlistContext } from './Q1/Contexts/WishlistContext'
 
 export { CartContext };
+export { WishlistContext }
 
 export const Questions = () => {
   return (
@@ -12,7 +14,9 @@ export const Questions = () => {
       <li>
         <Router>
           <CartProvider>
-            <Ecommerce />
+            <WishListProvider>
+              <Ecommerce />
+            </WishListProvider>
           </CartProvider>
           <hr />
         </Router>

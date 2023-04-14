@@ -69,3 +69,22 @@ export const Ecommerce = () => {
 //create a state to store cart data
 //create a handleUpdateCart fn and use it in productCard and onClick of a btn call this fn and pass a item to it
 //consume that cartData in Cart component and  call a ProductCard component and don't pass noDetail so it'll show the details
+
+
+// 3️⃣For Question3
+// In the question above, add a “Remove from cart” button in the My Cart page for each product. On click of this button, the product should be removed from the cart.
+
+// steps -> add "Remove from cart" btn in map in removeCart
+//make a new state in Cart filteredData,setF... set the initial value to the cartData
+//call a removeClickHandler on click of remove btn pass an id
+//and compare the passed id with the data which is in filtered data so , if we put filter on cartData then only that item will be removed and previous deleted will be came
+//so use filter() on filteredData state variable.
+
+
+// 4️⃣For Question4
+// Question -> In the above question, in your product listing page add a “Add to Wishlist” button along with each product. On click of the button, add that item to your Wishlist page. The added product should be visible in the My Wishlist page. Show the total number of items available in the Wishlist at the top of the page. Do this using context.
+
+// step->
+// add button with each product in ProductListing page
+//create a new context in contexts folder WishListContext and create state variable there and provide the wishlistData from there and also handleWishlistUpdate fn and set the previous data and add the current data in wishlist data.
+//consume that data in Wishlist component and print there using map.
