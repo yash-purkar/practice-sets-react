@@ -1,5 +1,5 @@
 import React from 'react'
-import { Ecommerce } from './Set8'
+import { Ecommerce, Todo } from './Set8'
 import { BrowserRouter as Router } from 'react-router-dom'
 import { CartProvider, CartContext } from './Q1/Contexts/CartContext'
 import './styles.css'
@@ -15,10 +15,11 @@ export const Questions = () => {
         <Router>
           <CartProvider>
             <WishListProvider>
-              <Ecommerce />
+              {/* <Ecommerce /> */}
             </WishListProvider>
           </CartProvider>
           <hr />
+          <Todo />
         </Router>
       </li>
     </ol>

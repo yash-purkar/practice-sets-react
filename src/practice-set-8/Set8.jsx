@@ -3,9 +3,13 @@ import { ProductListing } from './Q1/Pages-Q1/ProductListing'
 import { Cart } from './Q1/Pages-Q1/Cart'
 import { WishList } from './Q1/Pages-Q1/WishList'
 import { Navbar } from './Q1/Components-Q1/Navbar'
+import { Navbar2 } from './Q2/Components-Q2/Navbar2'
 import { ProductDetail } from './Q1/Pages-Q1/ProductDetail'
 import { useEffect, useState } from 'react'
-import { fakeFetch } from './Data'
+import { fakeFetch, fakeFetch2 } from './Data'
+import { TodoListing } from './Q2/Pages-Q2/TodoListing'
+import { OpenTodo } from './Q2/Pages-Q2/OpenTodo'
+import { DoneTodo } from './Q2/Pages-Q2/DoneTodo'
 
 
 
@@ -97,3 +101,54 @@ export const Ecommerce = () => {
 //create removeWishlistHandler fn in Wishlist Context and provide it.
 //this fn will take an id and it'll compare that id with wishlistData.id and it'll remove product
 //consume this fn in Wishlist and call on click of remove from wishlist btn and pass an id to it.
+
+
+//****************************************************************************************** */
+
+// ⚪6️⃣
+//!TODO APP
+// Create a Todo App in React with different routes for:
+
+// Summary of Done and Open Todos page - fakeFetch has been provided. List all the Todos on this page.
+// Done Todos page
+// Open Todos page
+// Page for Individual Todos item to show details of each Todo.
+
+export const Todo = () => {
+  const [todos, setTodos] = useState([]);
+  const getTodosData = async (url) => {
+    const { status, data: { todos } } = await fakeFetch2(url);
+    status === 200 && setTodos(todos)
+  }
+
+  useEffect(() => {
+    getTodosData("https://example.com/api/todos");
+  })
+
+  return (
+    <>
+      <h1>Todos</h1>
+      <Navbar2 />
+      <Routes>
+        <Route path='/' element={<TodoListing todos={todos} />} />
+        <Route path='/done' element={<DoneTodo todos={todos} />} />
+        <Route path='/open' element={<OpenTodo todos={todos} />} />
+      </Routes>
+    </>
+  )
+}
+
+// Fetch data and store it in state variable display it on UI
+// make a routes and navbar
+//Make a todoListing page and in that call todoCard comp and print in this in li tag
+//make Done and Open todos comp
+//pass a todosData to open and done pages and in both component filter the todos by isCompleted. and map on it in the component. and call a TodoCard component in map
+
+
+
+
+// 7️⃣In the question above, add a Mark as Done button to each todo. Then do the following using context:
+
+// On click of the button, add that todo to the Done Todos page.
+// Show the total number of Todos done on top of the Done Todos pages.
+// In the Summary page, strike through that todo.
