@@ -10,6 +10,10 @@ import { fakeFetch } from './Data'
 import { TodoListing } from './Q2/Pages-Q2/TodoListing'
 import { OpenTodo } from './Q2/Pages-Q2/OpenTodo'
 import { DoneTodo } from './Q2/Pages-Q2/DoneTodo'
+import { TodoDetail } from './Q2/Pages-Q2/TodoDetail'
+import { Home } from './Q3/Pages-Q3/Home'
+import { Questions } from './Q3/Pages-Q3/Questions'
+import { Answer } from './Q3/Pages-Q3/Answer'
 
 
 
@@ -124,6 +128,8 @@ export const Todo = () => {
         <Route path='/' element={<TodoListing />} />
         <Route path='/done' element={<DoneTodo />} />
         <Route path='/open' element={<OpenTodo />} />
+        <Route path='todo/:todoId' element={<TodoDetail />} />
+
       </Routes>
     </>
   )
@@ -148,7 +154,7 @@ export const Todo = () => {
 // On click of the button, add that todo to the Done Todos page.
 // Show the total number of Todos done on top of the Done Todos pages.
 // In the Summary page, strike through that todo.
- 
+
 // steps -> 
 //Add "Mark As Done" button to each todo in TodoCard comp. (add condition for open and done)
 //In todosContext define a function "handleTodoToggle" , it'll receive the id of todo which user clicked on btn. and it'll check for matching id (using map) in todos and toggle the isCompleted value of that todo item.
@@ -163,3 +169,25 @@ export const Todo = () => {
 //and using setter fn we set the data in todos.
 //now todos state variable was updated 
 //so whereever we consume the Todoscontext values that component will rerender.
+
+
+
+// 9️⃣Create a forum app in React with different routes for:
+
+// Home page
+// Questions page
+// Answer page
+// The Home page shows a welcome message with the user's name. The Questions page will list all the questions with 3 buttons: upvote, downvote, and answers. On click of answers button, Answer page should display with that particular question and answer.
+
+export const Forum = () => {
+
+  return (
+    <>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/questions' element={<Questions />} />
+        <Route path='/answer/:questionId' element={<Answer />} />
+      </Routes>
+    </>
+  )
+}

@@ -9,10 +9,10 @@ export const TodoListing = () => {
 
       <ul>
         {
-          todos.map((todo, i) => {
+          todos.map((todo) => {
             return (
               <>
-                <TodoCard {...todo} noDetail />
+                <TodoCard {...todo} hideExpand />
               </>
 
             )

@@ -37,3 +37,7 @@ button:hover {
   color: orange;
   cursor: pointer;
 }
+
+.forumLinks {
+  margin-right: 2rem;
+}
