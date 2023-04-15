@@ -1,12 +1,14 @@
 import React from 'react'
-import { Ecommerce, Todo } from './Set8'
 import { BrowserRouter as Router } from 'react-router-dom'
 import { CartProvider, CartContext } from './Q1/Contexts/CartContext'
-import './styles.css'
 import { WishListProvider, WishlistContext } from './Q1/Contexts/WishlistContext'
+import { TodosContextProvider, TodosContext } from './Q2/Contexts/TodosContext'
 
+import { Ecommerce, Todo } from './Set8'
+import './styles.css'
 export { CartContext };
-export { WishlistContext }
+export { WishlistContext };
+export { TodosContext };
 
 export const Questions = () => {
   return (
@@ -19,7 +21,9 @@ export const Questions = () => {
             </WishListProvider>
           </CartProvider>
           <hr />
-          <Todo />
+          <TodosContextProvider>
+            <Todo />
+          </TodosContextProvider>
         </Router>
       </li>
     </ol>

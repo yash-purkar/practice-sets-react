@@ -18,7 +18,7 @@ export const Cart = () => {
           cartData.map((product, i) => {
             return (
               <>
-                <ProductCard {...product} key={i} />
+                <ProductCard {...product} key={i} noDetail={false} />
                 <button onClick={() => handleCartRemove(product.id)}>Remove from cart</button>
                 <hr />
               </>

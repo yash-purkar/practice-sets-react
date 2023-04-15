@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { TodoCard } from '../Components-Q2/TodoCard'
+import { TodosContext } from '../../Questions'
 
-export const TodoListing = ({ todos }) => {
+export const TodoListing = () => {
+  const { todos } = useContext(TodosContext)
   return (
     <>
 
@@ -10,8 +12,7 @@ export const TodoListing = ({ todos }) => {
           todos.map((todo, i) => {
             return (
               <>
-                <TodoCard {...todo} />
-                <hr />
+                <TodoCard {...todo} noDetail />
               </>
 
             )

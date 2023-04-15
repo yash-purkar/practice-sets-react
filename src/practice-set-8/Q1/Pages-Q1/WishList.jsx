@@ -15,7 +15,7 @@ export const WishList = () => {
           wishlistData.map((product, i) => {
             return (
               <>
-                <ProductCard {...product} key={i} />
+                <ProductCard {...product} key={i} noDetail hideWishlistBtn />
                 <button onClick={() => handleRemoveFromWishList(product.id)}>Remove from Wishlist</button>
                 <hr />
               </>

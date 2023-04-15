@@ -6,7 +6,7 @@ import { Navbar } from './Q1/Components-Q1/Navbar'
 import { Navbar2 } from './Q2/Components-Q2/Navbar2'
 import { ProductDetail } from './Q1/Pages-Q1/ProductDetail'
 import { useEffect, useState } from 'react'
-import { fakeFetch, fakeFetch2 } from './Data'
+import { fakeFetch } from './Data'
 import { TodoListing } from './Q2/Pages-Q2/TodoListing'
 import { OpenTodo } from './Q2/Pages-Q2/OpenTodo'
 import { DoneTodo } from './Q2/Pages-Q2/DoneTodo'
@@ -115,36 +115,32 @@ export const Ecommerce = () => {
 // Page for Individual Todos item to show details of each Todo.
 
 export const Todo = () => {
-  const [todos, setTodos] = useState([]);
-  const getTodosData = async (url) => {
-    const { status, data: { todos } } = await fakeFetch2(url);
-    status === 200 && setTodos(todos)
-  }
-
-  useEffect(() => {
-    getTodosData("https://example.com/api/todos");
-  })
 
   return (
     <>
       <h1>Todos</h1>
       <Navbar2 />
       <Routes>
-        <Route path='/' element={<TodoListing todos={todos} />} />
-        <Route path='/done' element={<DoneTodo todos={todos} />} />
-        <Route path='/open' element={<OpenTodo todos={todos} />} />
+        <Route path='/' element={<TodoListing />} />
+        <Route path='/done' element={<DoneTodo />} />
+        <Route path='/open' element={<OpenTodo />} />
       </Routes>
     </>
   )
 }
 
-// Fetch data and store it in state variable display it on UI
-// make a routes and navbar
-//Make a todoListing page and in that call todoCard comp and print in this in li tag
-//make Done and Open todos comp
-//pass a todosData to open and done pages and in both component filter the todos by isCompleted. and map on it in the component. and call a TodoCard component in map
 
+// 6️⃣ question -> Create a Todo App in React with different routes for:
+// Summary of Done and Open Todos page - fakeFetch has been provided. List all the Todos on this page.
+// Done Todos page
+// Open Todos page
+// Page for Individual Todos item to show details of each Todo.
 
+// step -> create ALl pages and create a routes for that. (opentods, donetodo....)
+//create a todosContext and in that context create a state variable todosData by default []
+//and call a fakeFetch there and store the data in todos state variable. (so we can provide it to all comps)
+//In OpenTodo page consume the todos and check the condition for isCompleted and map the newData.
+//In DoneTodo page consume the todos and check the condition for isCompleted and map the newData.
 
 
 // 7️⃣In the question above, add a Mark as Done button to each todo. Then do the following using context:
@@ -152,3 +148,18 @@ export const Todo = () => {
 // On click of the button, add that todo to the Done Todos page.
 // Show the total number of Todos done on top of the Done Todos pages.
 // In the Summary page, strike through that todo.
+ 
+// steps -> 
+//Add "Mark As Done" button to each todo in TodoCard comp. (add condition for open and done)
+//In todosContext define a function "handleTodoToggle" , it'll receive the id of todo which user clicked on btn. and it'll check for matching id (using map) in todos and toggle the isCompleted value of that todo item.
+// and provide it , and consume it in TodoCard comp
+//And call this fn onClick of  button .
+
+
+//suppose we clicked on 1st mark as done data.
+//it'll call the handleTodoToggle fn and it'll send that todo id as a parameter.
+//handleTodoToggle fn will check for that id in todos(using map) and it'll toggle the isCompleted of matching todo id
+
+//and using setter fn we set the data in todos.
+//now todos state variable was updated 
+//so whereever we consume the Todoscontext values that component will rerender.
