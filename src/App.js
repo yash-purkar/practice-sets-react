@@ -1,5 +1,4 @@
 import './App.css';
-import { Questions } from './practice-set-8/Questions';
 // import Question from './Questions.js';
 // import { QuestionsByMAs } from './react-questions/QuestionsByMAs';
 // import { Questions } from './practice-set-1/Questions'; //set1
@@ -10,7 +9,8 @@ import { Questions } from './practice-set-8/Questions';
 // import { Questions } from './practice-set-5/Questions';
 // import { Questions } from './practice-set-6/Questions';
 // import { Questions } from './practice-set-7/Questions';
-
+// import { Questions } from './practice-set-8/Questions';
+import { Questions } from './practice-set-9/Questions';
 
 function App() {
   return (
