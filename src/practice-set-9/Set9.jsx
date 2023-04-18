@@ -13,6 +13,11 @@ import { Read } from './Q2/Pages-Q2/Read'
 import { Profile } from './Q2/Pages-Q2/Profile'
 import { Navbar1 } from './Q2/Components-Q2/Navbar1'
 import './Q2/styles2.css'
+import { Home3 } from './Q3/Pages-Q3/Home3'
+import { Menu } from './Q3/Pages-Q3/Menu'
+import { Cart } from './Q3/Pages-Q3/Cart'
+import { Navbar3 } from './Q3/Components-Q3/Navbar3'
+import { SearchBar } from './Q3/Components-Q3/SearchBar'
 
 
 /*1️⃣Create an Email app in React with different routes:
@@ -95,3 +100,40 @@ export const Books = () => {
 //use includes on readBooksId in BookCard to show the btns
 
 // d. consume user in profile and print details
+
+
+
+
+
+
+// 3️⃣Create an online food ordering app in React, with the following routes.
+
+// a. Home page - Home page should say “Welcome to neoG Food Ordering App” and it should have a button, that navigates to menu page.
+// b. Menu page:
+// Menu page should display all the items from the menu. Fake fetch has been provided.
+// Menu page should have a search bar to search for an item.
+// Menu page should have filters of isVeg , isSpicy and sort by price (both ascending and descending).Example
+// Each item should have the button to add that item to cart. On click of the button, that food item should be added to cart, for ordering it. Do this using context. If the item already exists in the cart, make the button text as go to cart on the menu page.
+// c. Cart Page
+// Cart page should show all the food items that were added to cart, the total price of all the items in cart, and the total time required to deliver all the products in minutes.Example
+// There should be an option to apply coupon which reduces the total cost by 5Rs of the total amount.
+
+export const Foody = () => {
+  return (
+    <>
+      <Navbar3 />
+      <SearchBar />
+      <Routes>
+        <Route path='/' element={<Home3 />} />
+        <Route path='/menu' element={<Menu />} />
+        <Route path='/cart' element={<Cart />} />
+        <Route />
+      </Routes>
+    </>
+  )
+}
+
+// Create a pages and navbar (routes)
+//in context call an fakeFetch and store the menuData in state variable and consume this data in Menu page and using map print this data, use another component to print each menu (MenuCard)
+
+//add search bar and checkboxes 
