@@ -10,7 +10,7 @@ export const Sent = () => {
       <ul>
         {
           sentEmails.map(email => {
-            return <EmailCard {...email} />
+            return <EmailCard {...email} read /> //read for hide btn in sent box
           })
         }
       </ul>
