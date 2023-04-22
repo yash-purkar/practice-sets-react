@@ -3,7 +3,7 @@ import { FoodContext } from '../Contexts-Q3/FoodContext';
 
 export const SearchBar = () => {
   const { menuData, filteredMenuData, setFilteredMenuData } = useContext(FoodContext);
-  // const
+
 
 
   const handleInputChange = (e) => {
