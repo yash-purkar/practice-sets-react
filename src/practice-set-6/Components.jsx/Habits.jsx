@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 export const Habits = ({ habitsData }) => {
   const [showArchived, setShowArchived] = useState(false)
 
-  const filteredHabits = showArchived ? habitsData.filter(({ archived }) => archived === showArchived) : habitsData.filter(({ archived }) => archived === showArchived)
+  const filteredHabits = showArchived ? habitsData.filter(({ archived }) => archived) : habitsData.filter(({ archived }) => !archived)
 
   return (
     <>

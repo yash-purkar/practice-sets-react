@@ -63,7 +63,7 @@ export const Product = () => {
   }
 
   const handleClick = () => {
-    const fitleredData = toggle ? newData.filter(({ quantity }) => quantity > 20) : productsData;
+    const fitleredData = toggle ? productsData.filter(({ quantity }) => quantity > 20) : productsData;
     setToggle(!toggle);
     setNewData(fitleredData)
   }

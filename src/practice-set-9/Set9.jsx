@@ -17,7 +17,12 @@ import { Home3 } from './Q3/Pages-Q3/Home3'
 import { Menu } from './Q3/Pages-Q3/Menu'
 import { Cart } from './Q3/Pages-Q3/Cart'
 import { Navbar3 } from './Q3/Components-Q3/Navbar3'
-import { SearchBar } from './Q3/Components-Q3/SearchBar'
+import { Home4 } from './Q4/Pages-Q4/Home4'
+import { VideoListing } from './Q4/Pages-Q4/VideoListing'
+import { LikedVideos } from './Q4/Pages-Q4/LikedVideos'
+import { WatchLater } from './Q4/Pages-Q4/WatchLater'
+import { Navbar4 } from './Q4/Components-Q4/Navbar4'
+import { VideoDetails } from './Q4/Pages-Q4/VideoDetails'
 
 
 /*1️⃣Create an Email app in React with different routes:
@@ -122,7 +127,6 @@ export const Foody = () => {
   return (
     <>
       <Navbar3 />
-      <SearchBar />
       <Routes>
         <Route path='/' element={<Home3 />} />
         <Route path='/menu' element={<Menu />} />
@@ -133,7 +137,36 @@ export const Foody = () => {
   )
 }
 
+
+
+
+
+
+
+
+
+
+
 // Create a pages and navbar (routes)
 //in context call an fakeFetch and store the menuData in state variable and consume this data in Menu page and using map print this data, use another component to print each menu (MenuCard)
 
-//add search bar and checkboxes 
+//add search bar and checkboxes
+
+
+
+
+
+
+// 4️⃣
+export const VideoLibrary = () => {
+  return <>
+    <Navbar4 />
+    <Routes>
+      <Route path='/' element={<Home4 />} />
+      <Route path='/videos' element={<VideoListing />} />
+      <Route path='/likedVideos' element={<LikedVideos />} />
+      <Route path='/watchLater' element={<WatchLater />} />
+      <Route path='/video/:videoTitle' element={<VideoDetails />} />
+    </Routes>
+  </>
+}
