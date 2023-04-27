@@ -5,13 +5,11 @@ export const FoodContext = createContext()
 
 export const FoodContextProvider = ({ children }) => {
   const [menuData, setMenuData] = useState([]);
-  const [filteredMenuData, setFilteredMenuData] = useState([])
   const getMenuData = async () => {
     try {
       const { status, data: { menu } } = await fakeFetch3('https://example.com/api/menu')
       if (status === 200) {
         setMenuData(menu)
-        setFilteredMenuData(menu)
       }
     } catch (err) {
       console.log(err)
@@ -23,7 +21,7 @@ export const FoodContextProvider = ({ children }) => {
   // console.log(menuData)
 
   return (
-    <FoodContext.Provider value={{ menuData, filteredMenuData, setFilteredMenuData }}>
+    <FoodContext.Provider value={{ menuData }}>
       {children}
     </FoodContext.Provider>
   )

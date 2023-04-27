@@ -25,18 +25,18 @@ export const Questions = () => {
         </Router> */}
       </li>
       <li>
-        {/* <Router>
+        <Router>
           <FoodContextProvider>
             <Foody />
           </FoodContextProvider>
-        </Router> */}
+        </Router>
       </li>
       <li>
-        <Router>
+        {/* <Router>
           <VideosContextProvider>
             <VideoLibrary />
           </VideosContextProvider>
-        </Router>
+        </Router> */}
       </li>
     </ol>
   )
