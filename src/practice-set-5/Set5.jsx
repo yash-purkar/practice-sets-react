@@ -48,16 +48,19 @@ export const Product = () => {
   const [productsData, setProductsData] = useState([]);
   const [errMsg, setErrMsg] = useState("");
   const [toggle, setToggle] = useState(true);
-  const [newData, setNewData] = useState([])
+  const [newData, setNewData] = useState([]);
+  const [loading,setLoading] = useState(true);
 
   const getProductsData = async (url) => {
     try {
       const { status, data: { products } } = await fakeFetch2(url);
+      setLoading(false)
       if (status === 200) {
         setProductsData(products);
         setNewData(products)
       };
     } catch ({ status, message }) {
+       setLoading(false)
       setErrMsg(`${status} ${message}`)
     }
   }
@@ -73,6 +76,8 @@ export const Product = () => {
   }, [])
   return (
     <>
+    { loading ? <h1>Loading...</h1> :
+      <div>
       <button onClick={handleClick}>Show products with quantity more than 20</button>
       <ul>
         {
@@ -81,6 +86,8 @@ export const Product = () => {
           })
         }
       </ul>
+      </div>
+    }
       {errMsg && <h2 style={{ color: "red" }}>{errMsg}</h2>}
     </>
   )
