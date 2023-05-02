@@ -173,7 +173,7 @@ export const HabitTracker2 = () => {
 
 
 export const Projects = () => {
-  const [projectsData, setProjectsData] = useState([]);
+  const [projectsData, setProjectsData] = useState();
   const [projectDetails, setProjectDetails] = useState();
 
   const getProjectsDetails = async (url) => {
@@ -192,7 +192,7 @@ export const Projects = () => {
     <>
       <h1>Projects</h1>
       {
-        projectsData.map((project) => {
+        projectsData?.map((project) => {
           return <ShowProjects project={project} setProjectDetails={setProjectDetails} />
         })
       }
