@@ -49,7 +49,7 @@ export const Product = () => {
   const [errMsg, setErrMsg] = useState("");
   const [toggle, setToggle] = useState(true);
   const [newData, setNewData] = useState([]);
-  const [loading,setLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
 
   const getProductsData = async (url) => {
     try {
@@ -60,7 +60,7 @@ export const Product = () => {
         setNewData(products)
       };
     } catch ({ status, message }) {
-       setLoading(false)
+      setLoading(false)
       setErrMsg(`${status} ${message}`)
     }
   }
@@ -76,18 +76,18 @@ export const Product = () => {
   }, [])
   return (
     <>
-    { loading ? <h1>Loading...</h1> :
-      <div>
-      <button onClick={handleClick}>Show products with quantity more than 20</button>
-      <ul>
-        {
-          newData.map(({ name, price, quantity }, i) => {
-            return <li key={i}>{name} - INR {price} - Qty:({quantity})</li>
-          })
-        }
-      </ul>
-      </div>
-    }
+      {loading ? <h1>Loading...</h1> :
+        <div>
+          {!errMsg && <button onClick={handleClick}>Show products with quantity more than 20</button>}
+          <ul>
+            {
+              newData?.map(({ name, price, quantity }, i) => {
+                return <li key={i}>{name} - INR {price} - Qty:({quantity})</li>
+              })
+            }
+          </ul>
+        </div>
+      }
       {errMsg && <h2 style={{ color: "red" }}>{errMsg}</h2>}
     </>
   )
@@ -185,40 +185,44 @@ export const ShowImg = ({ heading, width, height }) => {
 // b. Handle errors by showing an error message on the DOM, in case of any error.
 export const Users1 = ({ heading, width, height }) => {
   const [usersData, setUsersData] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [errMsg, setErrMsg] = useState("")
 
   const getUsersData = async (url) => {
     try {
       const { status, data } = await fakeFetch5(url);
-      setLoading(false)
       status === 200 && setUsersData(data)
     } catch ({ status, message }) {
-      console.log(status, message)
+      setErrMsg(`${status} ${message}`)
+    } finally {
+      setLoading(false)
     }
   }
 
   useEffect(() => {
-    setLoading(true)
-    getUsersData("https://example.com/api/users")
+    getUsersData("https://eample.com/api/users")
   }, [])
   return (
     <>
-      {loading && <h1>Loading...</h1>}
-      <h1>{heading}</h1>
-      <ul>
-        {
-          usersData.map(({ name, image, likes, comments }, i) => {
-            return (
-              <li key={i}>
-                <img src={image} alt="img" height={height} width={width} />
-                <p>{name}</p>
-                <p>Likes: {likes}</p>
-                <p>Comments: {comments}</p>
-              </li>
-            )
-          })
-        }
-      </ul>
+      {loading ? <h1>Loading...</h1> : <div>
+        {!errMsg && <h1>{heading}</h1>}
+        <ul>
+          {
+            usersData.map(({ name, image, likes, comments }, i) => {
+              return (
+                <li key={i}>
+                  <img src={image} alt="img" height={height} width={width} />
+                  <p>{name}</p>
+                  <p>Likes: {likes}</p>
+                  <p>Comments: {comments}</p>
+                </li>
+              )
+            })
+          }
+        </ul>
+      </div>}
+
+      {errMsg && <h1>{errMsg}</h1>}
     </>
   )
 }

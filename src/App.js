@@ -7,10 +7,10 @@ import './App.css';
 // import { Questions } from './FilterWithReact/Questions';
 // import { Questions } from './practice-set-4/Questions';
 // import { Questions } from './practice-set-5/Questions';
-// import { Questions } from './practice-set-6/Questions';
+import { Questions } from './practice-set-6/Questions';
 // import { Questions } from './practice-set-7/Questions';
 // import { Questions } from './practice-set-8/Questions';
-import { Questions } from './practice-set-9/Questions';
+// import { Questions } from './practice-set-9/Questions';
 
 function App() {
   return (
