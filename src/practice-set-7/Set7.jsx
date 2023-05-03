@@ -455,5 +455,5 @@ export const Products4 = () => {
   )
 }
 
-//Display datao on UI
+//Display data on UI
 //get inputvalue
