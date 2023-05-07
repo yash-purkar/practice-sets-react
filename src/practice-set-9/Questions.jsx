@@ -10,11 +10,11 @@ export const Questions = () => {
   return (
     <ol style={{ listStyle: "none" }}>
       <li>
-        {/* <Router>
+        <Router>
           <EmailContextProvider>
             <EmailApp />
           </EmailContextProvider>
-        </Router> */}
+        </Router>
       </li>
 
       <li>
@@ -24,13 +24,13 @@ export const Questions = () => {
           </BooksContextProvider>
         </Router> */}
       </li>
-      <li>
+      {/* <li>
         <Router>
           <FoodContextProvider>
             <Foody />
           </FoodContextProvider>
         </Router>
-      </li>
+      </li> */}
       <li>
         {/* <Router>
           <VideosContextProvider>
